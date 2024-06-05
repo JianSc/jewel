@@ -1,0 +1,10 @@
+bin\Debug\sys.dll
+bin\Debug\sys.pdb
+obj\Debug\ResolveAssemblyReference.cache
+obj\Debug\sys.dll
+obj\Debug\sys.pdb
+bin\Release\sys.dll
+bin\Release\sys.pdb
+obj\Release\ResolveAssemblyReference.cache
+obj\Release\sys.dll
+obj\Release\sys.pdb

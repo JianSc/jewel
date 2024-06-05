@@ -1,0 +1,14 @@
+F:\Jewel\imgUP\bin\Debug\imgUP.dll
+F:\Jewel\imgUP\bin\Debug\imgUP.pdb
+F:\Jewel\imgUP\obj\Debug\ResolveAssemblyReference.cache
+F:\Jewel\imgUP\obj\Debug\imgUP.imgform.resources
+F:\Jewel\imgUP\obj\Debug\imgUP.Properties.Resources.resources
+F:\Jewel\imgUP\obj\Debug\imgUP.csproj.GenerateResource.Cache
+F:\Jewel\imgUP\obj\Debug\imgUP.dll
+F:\Jewel\imgUP\obj\Debug\imgUP.pdb
+F:\Jewel\imgUP\bin\Debug\camACP.dll
+F:\Jewel\imgUP\bin\Debug\mesk.dll
+F:\Jewel\imgUP\bin\Debug\MSG.dll
+F:\Jewel\imgUP\bin\Debug\mesk.pdb
+F:\Jewel\imgUP\bin\Debug\camACP.pdb
+F:\Jewel\imgUP\bin\Debug\MSG.pdb

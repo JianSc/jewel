@@ -1,0 +1,10 @@
+bin\Release\mesk.dll
+bin\Release\mesk.pdb
+obj\Release\ResolveAssemblyReference.cache
+obj\Release\mesk.dll
+obj\Release\mesk.pdb
+bin\Debug\mesk.dll
+bin\Debug\mesk.pdb
+obj\Debug\ResolveAssemblyReference.cache
+obj\Debug\mesk.dll
+obj\Debug\mesk.pdb

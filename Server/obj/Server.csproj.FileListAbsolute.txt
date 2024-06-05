@@ -1,0 +1,12 @@
+F:\Jewel\Server\bin\Debug\Server.exe
+F:\Jewel\Server\bin\Debug\Server.pdb
+F:\Jewel\Server\bin\Debug\sys.dll
+F:\Jewel\Server\bin\Debug\sys.pdb
+F:\Jewel\Server\obj\Debug\ResolveAssemblyReference.cache
+F:\Jewel\Server\obj\Debug\Server.Tools.resources
+F:\Jewel\Server\obj\Debug\Server.xMain.resources
+F:\Jewel\Server\obj\Debug\Server.Properties.Resources.resources
+F:\Jewel\Server\obj\Debug\Server.用户管理.resources
+F:\Jewel\Server\obj\Debug\Server.csproj.GenerateResource.Cache
+F:\Jewel\Server\obj\Debug\Server.exe
+F:\Jewel\Server\obj\Debug\Server.pdb

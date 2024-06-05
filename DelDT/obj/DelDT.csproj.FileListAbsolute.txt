@@ -1,0 +1,8 @@
+F:\Jewel\DelDT\bin\Debug\DelDT.exe
+F:\Jewel\DelDT\bin\Debug\DelDT.pdb
+F:\Jewel\DelDT\obj\Debug\ResolveAssemblyReference.cache
+F:\Jewel\DelDT\obj\Debug\DelDT.Form1.resources
+F:\Jewel\DelDT\obj\Debug\DelDT.Properties.Resources.resources
+F:\Jewel\DelDT\obj\Debug\DelDT.csproj.GenerateResource.Cache
+F:\Jewel\DelDT\obj\Debug\DelDT.exe
+F:\Jewel\DelDT\obj\Debug\DelDT.pdb

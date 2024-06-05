@@ -1,0 +1,5 @@
+F:\Jewel\camACP\bin\Debug\camACP.dll
+F:\Jewel\camACP\bin\Debug\camACP.pdb
+F:\Jewel\camACP\obj\Debug\ResolveAssemblyReference.cache
+F:\Jewel\camACP\obj\Debug\camACP.dll
+F:\Jewel\camACP\obj\Debug\camACP.pdb

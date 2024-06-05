@@ -1,0 +1,10 @@
+F:\Jewel\camACP\bin\Debug\camACP.dll
+F:\Jewel\camACP\bin\Debug\camACP.pdb
+F:\Jewel\camACP\obj\Debug\ResolveAssemblyReference.cache
+F:\Jewel\camACP\obj\Debug\camACP.dll
+F:\Jewel\camACP\obj\Debug\camACP.pdb
+F:\软件开发\Jewel\camACP\bin\Debug\camACP.dll
+F:\软件开发\Jewel\camACP\bin\Debug\camACP.pdb
+F:\软件开发\Jewel\camACP\obj\Debug\camACP.csprojResolveAssemblyReference.cache
+F:\软件开发\Jewel\camACP\obj\Debug\camACP.dll
+F:\软件开发\Jewel\camACP\obj\Debug\camACP.pdb

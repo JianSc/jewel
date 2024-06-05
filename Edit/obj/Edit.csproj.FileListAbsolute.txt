@@ -1,0 +1,8 @@
+F:\Jewel\Edit\obj\Debug\ResolveAssemblyReference.cache
+F:\Jewel\Edit\obj\Debug\Edit.Form1.resources
+F:\Jewel\Edit\obj\Debug\Edit.Properties.Resources.resources
+F:\Jewel\Edit\obj\Debug\Edit.csproj.GenerateResource.Cache
+F:\Jewel\Edit\bin\Debug\Edit.exe
+F:\Jewel\Edit\bin\Debug\Edit.pdb
+F:\Jewel\Edit\obj\Debug\Edit.exe
+F:\Jewel\Edit\obj\Debug\Edit.pdb

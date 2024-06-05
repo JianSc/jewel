@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="theDST" targetNamespace="http://tempuri.org/theDST.xsd" xmlns:mstns="http://tempuri.org/theDST.xsd" xmlns="http://tempuri.org/theDST.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+        </Connections>
+        <Tables>
+        </Tables>
+        <Sources>
+        </Sources>
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="theDST" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:Generator_UserDSName="theDST" msprop:Generator_DataSetName="theDST">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="imgDST" msprop:Generator_UserTableName="imgDST" msprop:Generator_RowDeletedName="imgDSTRowDeleted" msprop:Generator_TableClassName="imgDSTDataTable" msprop:Generator_RowChangedName="imgDSTRowChanged" msprop:Generator_RowClassName="imgDSTRow" msprop:Generator_RowChangingName="imgDSTRowChanging" msprop:Generator_RowEvArgName="imgDSTRowChangeEvent" msprop:Generator_RowEvHandlerName="imgDSTRowChangeEventHandler" msprop:Generator_TablePropName="imgDST" msprop:Generator_TableVarName="tableimgDST" msprop:Generator_RowDeletingName="imgDSTRowDeleting">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="id" msdata:AutoIncrement="true" msprop:Generator_UserColumnName="id" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_ColumnVarNameInTable="columnid" msprop:Generator_ColumnPropNameInTable="idColumn" type="xs:short" minOccurs="0" />
+              <xs:element name="name" msprop:Generator_UserColumnName="name" msprop:Generator_ColumnPropNameInRow="name" msprop:Generator_ColumnVarNameInTable="columnname" msprop:Generator_ColumnPropNameInTable="nameColumn" type="xs:string" minOccurs="0" />
+              <xs:element name="bol" msprop:Generator_UserColumnName="bol" msprop:Generator_ColumnPropNameInRow="bol" msprop:Generator_ColumnVarNameInTable="columnbol" msprop:Generator_ColumnPropNameInTable="bolColumn" type="xs:boolean" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

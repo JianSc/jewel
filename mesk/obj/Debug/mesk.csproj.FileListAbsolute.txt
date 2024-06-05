@@ -1,0 +1,10 @@
+F:\Jewel\mesk\bin\Debug\mesk.dll
+F:\Jewel\mesk\bin\Debug\mesk.pdb
+F:\Jewel\mesk\obj\Debug\ResolveAssemblyReference.cache
+F:\Jewel\mesk\obj\Debug\mesk.dll
+F:\Jewel\mesk\obj\Debug\mesk.pdb
+F:\软件开发\Jewel\mesk\bin\Debug\mesk.dll
+F:\软件开发\Jewel\mesk\bin\Debug\mesk.pdb
+F:\软件开发\Jewel\mesk\obj\Debug\mesk.csprojResolveAssemblyReference.cache
+F:\软件开发\Jewel\mesk\obj\Debug\mesk.dll
+F:\软件开发\Jewel\mesk\obj\Debug\mesk.pdb

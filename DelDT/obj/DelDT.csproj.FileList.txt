@@ -1,0 +1,8 @@
+bin\Debug\DelDT.exe
+bin\Debug\DelDT.pdb
+obj\Debug\ResolveAssemblyReference.cache
+obj\Debug\DelDT.Form1.resources
+obj\Debug\DelDT.Properties.Resources.resources
+obj\Debug\DelDT.csproj.GenerateResource.Cache
+obj\Debug\DelDT.exe
+obj\Debug\DelDT.pdb

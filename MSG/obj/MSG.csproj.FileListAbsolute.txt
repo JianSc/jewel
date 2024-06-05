@@ -1,0 +1,10 @@
+F:\Jewel\MSG\bin\Debug\MSG.dll
+F:\Jewel\MSG\bin\Debug\MSG.pdb
+F:\Jewel\MSG\obj\Debug\ResolveAssemblyReference.cache
+F:\Jewel\MSG\obj\Debug\MSG.MSGFORM.resources
+F:\Jewel\MSG\obj\Debug\MSG.MSGFORM2.resources
+F:\Jewel\MSG\obj\Debug\MSG.Properties.Resources.resources
+F:\Jewel\MSG\obj\Debug\MSG.MSGFORM1.resources
+F:\Jewel\MSG\obj\Debug\MSG.csproj.GenerateResource.Cache
+F:\Jewel\MSG\obj\Debug\MSG.dll
+F:\Jewel\MSG\obj\Debug\MSG.pdb

@@ -1,0 +1,501 @@
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{A25A8409-6458-4FB6-AF97-C41A3227E649}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Mdian</RootNamespace>
+    <AssemblyName>Mdian</AssemblyName>
+    <ApplicationIcon>ico.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Lend.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Lend.Designer.cs">
+      <DependentUpon>Lend.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Login.Designer.cs">
+      <DependentUpon>Login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="theDST.cs">
+      <DependentUpon>theDST.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="theDST.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>theDST.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="xconfig.cs" />
+    <Compile Include="xMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="xMain.Designer.cs">
+      <DependentUpon>xMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Lend.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>Lend.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Login.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="xMain.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>xMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="仓库\仓库.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>仓库.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="修改密码.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>修改密码.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="报表\单据分析.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>单据分析.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="报表\店员销售统计.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>店员销售统计.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="报表\店员销售统计详细.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>店员销售统计详细.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="报表\店员销售详细S.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>店员销售详细S.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="报表\销售年度统计.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>销售年度统计.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="报表\销售统计详细.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>销售统计详细.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="报表\销售统计选择.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>销售统计选择.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="收货.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>收货.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="收货详细.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>收货详细.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="盘点\盘亏表.resx">
+      <DependentUpon>盘亏表.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="盘点\盘点.resx">
+      <DependentUpon>盘点.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="盘点\盘盈表.resx">
+      <DependentUpon>盘盈表.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="退货\退货.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>退货.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="退货\退货状态.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>退货状态.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="退货\退货详情.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>退货详情.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="销售\insertCard.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>insertCard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="销售\客户资料添加.resx">
+      <DependentUpon>客户资料添加.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="销售\打印详细.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>打印详细.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="销售\积分查看.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>积分查看.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="销售\销售.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>销售.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="销售\销售打印总览.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>销售打印总览.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="销退\销退.resx">
+      <SubType>Designer</SubType>
+      <DependentUpon>销退.cs</DependentUpon>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="仓库\仓库.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="仓库\仓库.Designer.cs">
+      <DependentUpon>仓库.cs</DependentUpon>
+    </Compile>
+    <Compile Include="修改密码.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="修改密码.Designer.cs">
+      <DependentUpon>修改密码.cs</DependentUpon>
+    </Compile>
+    <Compile Include="报表\单据分析.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="报表\单据分析.Designer.cs">
+      <DependentUpon>单据分析.cs</DependentUpon>
+    </Compile>
+    <Compile Include="报表\店员销售统计.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="报表\店员销售统计.Designer.cs">
+      <DependentUpon>店员销售统计.cs</DependentUpon>
+    </Compile>
+    <Compile Include="报表\店员销售统计详细.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="报表\店员销售统计详细.Designer.cs">
+      <DependentUpon>店员销售统计详细.cs</DependentUpon>
+    </Compile>
+    <Compile Include="报表\店员销售详细S.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="报表\店员销售详细S.Designer.cs">
+      <DependentUpon>店员销售详细S.cs</DependentUpon>
+    </Compile>
+    <Compile Include="报表\销售年度统计.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="报表\销售年度统计.Designer.cs">
+      <DependentUpon>销售年度统计.cs</DependentUpon>
+    </Compile>
+    <Compile Include="报表\销售统计详细.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="报表\销售统计详细.Designer.cs">
+      <DependentUpon>销售统计详细.cs</DependentUpon>
+    </Compile>
+    <Compile Include="报表\销售统计选择.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="报表\销售统计选择.Designer.cs">
+      <DependentUpon>销售统计选择.cs</DependentUpon>
+    </Compile>
+    <Compile Include="收货.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="收货.Designer.cs">
+      <DependentUpon>收货.cs</DependentUpon>
+    </Compile>
+    <Compile Include="收货详细.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="收货详细.Designer.cs">
+      <DependentUpon>收货详细.cs</DependentUpon>
+    </Compile>
+    <Compile Include="盘点\盘亏表.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="盘点\盘亏表.Designer.cs">
+      <DependentUpon>盘亏表.cs</DependentUpon>
+    </Compile>
+    <Compile Include="盘点\盘点.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="盘点\盘点.Designer.cs">
+      <DependentUpon>盘点.cs</DependentUpon>
+    </Compile>
+    <Compile Include="盘点\盘盈表.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="盘点\盘盈表.Designer.cs">
+      <DependentUpon>盘盈表.cs</DependentUpon>
+    </Compile>
+    <Compile Include="退货\退货.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="退货\退货.Designer.cs">
+      <DependentUpon>退货.cs</DependentUpon>
+    </Compile>
+    <Compile Include="退货\退货状态.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="退货\退货状态.Designer.cs">
+      <DependentUpon>退货状态.cs</DependentUpon>
+    </Compile>
+    <Compile Include="退货\退货详情.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="退货\退货详情.Designer.cs">
+      <DependentUpon>退货详情.cs</DependentUpon>
+    </Compile>
+    <Compile Include="销售\insertCard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="销售\insertCard.Designer.cs">
+      <DependentUpon>insertCard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="销售\客户资料添加.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="销售\客户资料添加.Designer.cs">
+      <DependentUpon>客户资料添加.cs</DependentUpon>
+    </Compile>
+    <Compile Include="销售\打印详细.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="销售\打印详细.Designer.cs">
+      <DependentUpon>打印详细.cs</DependentUpon>
+    </Compile>
+    <Compile Include="销售\积分查看.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="销售\积分查看.Designer.cs">
+      <DependentUpon>积分查看.cs</DependentUpon>
+    </Compile>
+    <Compile Include="销售\销售.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="销售\销售.Designer.cs">
+      <DependentUpon>销售.cs</DependentUpon>
+    </Compile>
+    <Compile Include="销售\销售打印总览.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="销售\销售打印总览.Designer.cs">
+      <DependentUpon>销售打印总览.cs</DependentUpon>
+    </Compile>
+    <Compile Include="销退\销退.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="销退\销退.Designer.cs">
+      <DependentUpon>销退.cs</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\tji.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\0x00001.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\0x00002.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\0x00003.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\delete.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\dru.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\edit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Excel.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ImgLook.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\list.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\loading.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\print.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\quit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\server.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SLlook.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SXT.png" />
+    <None Include="theDST.xsc">
+      <DependentUpon>theDST.xsd</DependentUpon>
+    </None>
+    <None Include="theDST.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>theDST.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="theDST.xss">
+      <DependentUpon>theDST.xsd</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\config\config.csproj">
+      <Project>{408781CF-4E2D-4906-8D81-06EB66B2B051}</Project>
+      <Name>config</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\GoldPrinter\GoldPrinter.csproj">
+      <Project>{97109DD8-A8D0-44F0-9959-15E4EB650FDD}</Project>
+      <Name>GoldPrinter</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\mesk\mesk.csproj">
+      <Project>{F3756422-0A80-40A9-8547-28E28CBF3878}</Project>
+      <Name>mesk</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MSG\MSG.csproj">
+      <Project>{7138E8E0-B17F-44AB-B2D6-3DD327926937}</Project>
+      <Name>MSG</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\XXB.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ImgGet.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ImgGet_Err.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\0x00s01.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\0x00s02.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\0x00s03.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\0x00s04.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\0x00s05.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\0x00s06.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\LEND.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\button1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\button2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\button11.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\button21.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\X.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\X2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\_2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\_.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\0x00b02.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PC.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PK.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\PY.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="ico.ico" />
+    <None Include="Resources\Card.png" />
+    <None Include="Resources\LoadIMG.gif" />
+    <None Include="Resources\Loading1.gif" />
+    <None Include="Resources\XXBB1.png" />
+    <None Include="Resources\XXBB.png" />
+    <None Include="Resources\select.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,5 @@
+F:\Jewel\config\bin\Debug\config.dll
+F:\Jewel\config\bin\Debug\config.pdb
+F:\Jewel\config\obj\Debug\ResolveAssemblyReference.cache
+F:\Jewel\config\obj\Debug\config.dll
+F:\Jewel\config\obj\Debug\config.pdb

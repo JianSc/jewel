@@ -1,0 +1,24 @@
+Microsoft Visual Studio Solution File, Format Version 8.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GoldPrinter", "GoldPrinter.csproj", "{97109DD8-A8D0-44F0-9959-15E4EB650FDD}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfiguration) = preSolution
+		Debug = Debug
+		Release = Release
+	EndGlobalSection
+	GlobalSection(ProjectConfiguration) = postSolution
+		{97109DD8-A8D0-44F0-9959-15E4EB650FDD}.Debug.ActiveCfg = Debug|.NET
+		{97109DD8-A8D0-44F0-9959-15E4EB650FDD}.Debug.Build.0 = Debug|.NET
+		{97109DD8-A8D0-44F0-9959-15E4EB650FDD}.Release.ActiveCfg = Release|.NET
+		{97109DD8-A8D0-44F0-9959-15E4EB650FDD}.Release.Build.0 = Release|.NET
+	EndGlobalSection
+	GlobalSection(SolutionItems) = postSolution
+		GoldPrinter.vsd = GoldPrinter.vsd
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+	EndGlobalSection
+	GlobalSection(ExtensibilityAddIns) = postSolution
+	EndGlobalSection
+EndGlobal

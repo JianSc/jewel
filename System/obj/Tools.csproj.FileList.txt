@@ -1,0 +1,12 @@
+obj\Debug\ResolveAssemblyReference.cache
+obj\Debug\Tools.Form1.resources
+obj\Debug\System.Properties.Resources.resources
+obj\Debug\Tools.csproj.GenerateResource.Cache
+obj\Debug\System.exe
+bin\Debug\System.exe
+bin\Debug\System.pdb
+bin\Debug\mesk.dll
+bin\Debug\MSG.dll
+bin\Debug\mesk.pdb
+bin\Debug\MSG.pdb
+obj\Debug\System.pdb

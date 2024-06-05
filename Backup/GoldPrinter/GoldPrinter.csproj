@@ -1,0 +1,231 @@
+﻿<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <ProjectType>Local</ProjectType>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{97109DD8-A8D0-44F0-9959-15E4EB650FDD}</ProjectGuid>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ApplicationIcon>
+    </ApplicationIcon>
+    <AssemblyKeyContainerName>
+    </AssemblyKeyContainerName>
+    <AssemblyName>Qzhi</AssemblyName>
+    <AssemblyOriginatorKeyFile>
+    </AssemblyOriginatorKeyFile>
+    <DefaultClientScript>JScript</DefaultClientScript>
+    <DefaultHTMLPageLayout>Grid</DefaultHTMLPageLayout>
+    <DefaultTargetSchema>IE50</DefaultTargetSchema>
+    <DelaySign>false</DelaySign>
+    <OutputType>Library</OutputType>
+    <RootNamespace>GoldPrinter</RootNamespace>
+    <RunPostBuildEvent>OnBuildSuccess</RunPostBuildEvent>
+    <StartupObject>
+    </StartupObject>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <OutputPath>bin\Debug\</OutputPath>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+    <BaseAddress>285212672</BaseAddress>
+    <CheckForOverflowUnderflow>false</CheckForOverflowUnderflow>
+    <ConfigurationOverrideFile>
+    </ConfigurationOverrideFile>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DocumentationFile>bin\Debug\Qzhi.xml</DocumentationFile>
+    <DebugSymbols>true</DebugSymbols>
+    <FileAlignment>4096</FileAlignment>
+    <NoStdLib>false</NoStdLib>
+    <NoWarn>
+    </NoWarn>
+    <Optimize>false</Optimize>
+    <RegisterForComInterop>false</RegisterForComInterop>
+    <RemoveIntegerChecks>false</RemoveIntegerChecks>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <WarningLevel>4</WarningLevel>
+    <DebugType>full</DebugType>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <OutputPath>bin\Release\</OutputPath>
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+    <BaseAddress>285212672</BaseAddress>
+    <CheckForOverflowUnderflow>false</CheckForOverflowUnderflow>
+    <ConfigurationOverrideFile>
+    </ConfigurationOverrideFile>
+    <DefineConstants>TRACE</DefineConstants>
+    <DocumentationFile>
+    </DocumentationFile>
+    <DebugSymbols>false</DebugSymbols>
+    <FileAlignment>4096</FileAlignment>
+    <NoStdLib>false</NoStdLib>
+    <NoWarn>
+    </NoWarn>
+    <Optimize>true</Optimize>
+    <RegisterForComInterop>false</RegisterForComInterop>
+    <RemoveIntegerChecks>false</RemoveIntegerChecks>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <WarningLevel>4</WarningLevel>
+    <DebugType>none</DebugType>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Interop.Excel">
+      <Name>Interop.Excel</Name>
+      <HintPath>bin\Debug\Interop.Excel.dll</HintPath>
+    </Reference>
+    <Reference Include="System">
+      <Name>System</Name>
+    </Reference>
+    <Reference Include="System.Data">
+      <Name>System.Data</Name>
+    </Reference>
+    <Reference Include="System.Drawing">
+      <Name>System.Drawing</Name>
+    </Reference>
+    <Reference Include="System.Web">
+      <Name>System.Web</Name>
+    </Reference>
+    <Reference Include="System.Windows.Forms">
+      <Name>System.Windows.Forms</Name>
+    </Reference>
+    <Reference Include="System.Xml">
+      <Name>System.XML</Name>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ChineseMoney.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Excel\Enum\Enum.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Excel\ExcelAccess.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Excel\ExcelBase.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Excel\Exception\Exception.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="MisGoldPrinter.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PrinterPageSetting\Delegate.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PrinterPageSetting\Enum\Enum.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PrinterPageSetting\Exception\Exception.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PrinterPageSetting\IPrinterPageSetting.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PrinterPageSetting\PrinterPageSetting.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PrinterPageSetting\WebPrinterPageSetting.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="PrinterPageSetting\WinPrinterPageSetting.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Service\Base\DrawBase.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Service\Base\DrawRectangle.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Service\Base\DrawText.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Service\Base\IDraw.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Service\Base\Printer.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Service\Base\PrinterBase.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Service\Base\PrinterMargins.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Service\Base\PrinterSingleton.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Service\Base\Sewing.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Service\Grid\CellRectangle.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Service\Grid\DrawGrid.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Service\Grid\GoldGrid.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Service\Grid\GridBase.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Service\Grid\GridEnum.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Service\Grid\IGrid.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Service\Grid\PrinterTabStops.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="SysObject\Body.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="SysObject\Bottom.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="SysObject\Caption.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="SysObject\Footer.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="SysObject\Header.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="SysObject\MultiHeader.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="SysObject\Outer.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="SysObject\Title.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="SysObject\Top.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="TimeDef.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Vs2005DataGridView打印\DataGridViewListViewHelper.cs">
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PreBuildEvent>
+    </PreBuildEvent>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
+</Project>

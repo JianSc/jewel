@@ -1,0 +1,8 @@
+F:\Jewel\Tools_Client\bin\Debug\System.exe
+F:\Jewel\Tools_Client\bin\Debug\System.pdb
+F:\Jewel\Tools_Client\obj\Debug\ResolveAssemblyReference.cache
+F:\Jewel\Tools_Client\obj\Debug\Tools_Client.Form1.resources
+F:\Jewel\Tools_Client\obj\Debug\Tools_Client.Properties.Resources.resources
+F:\Jewel\Tools_Client\obj\Debug\Tools_Client.csproj.GenerateResource.Cache
+F:\Jewel\Tools_Client\obj\Debug\System.exe
+F:\Jewel\Tools_Client\obj\Debug\System.pdb

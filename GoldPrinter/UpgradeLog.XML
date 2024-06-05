@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?><?xml-stylesheet type='text/xsl' href='_UpgradeReport_Files/UpgradeReport.xslt'?><UpgradeLog>
+<Properties><Property Name="Solution" Value="GoldPrinter">
+</Property><Property Name="解决方案文件" Value="D:\My Documents\MisGoldPrinter\GoldPrinterV2.5源码\GoldPrinter\GoldPrinter.sln">
+</Property><Property Name="用户选项文件" Value="D:\My Documents\MisGoldPrinter\GoldPrinterV2.5源码\GoldPrinter\GoldPrinter.suo">
+</Property><Property Name="Date" Value="2011年1月26日 星期三">
+</Property><Property Name="Time" Value="15:05">
+</Property></Properties><Event ErrorLevel="0" Project="" Source="GoldPrinter.sln" Description="文件已成功备份为 D:\My Documents\MisGoldPrinter\GoldPrinterV2.5源码\GoldPrinter\Backup\GoldPrinter.sln">
+</Event><Event ErrorLevel="0" Project="" Source="GoldPrinter.suo" Description="文件已成功备份为 D:\My Documents\MisGoldPrinter\GoldPrinterV2.5源码\GoldPrinter\Backup\GoldPrinter.suo">
+</Event><Event ErrorLevel="0" Project="GoldPrinter" Source="GoldPrinter.csproj" Description="项目文件已成功备份为 D:\My Documents\MisGoldPrinter\GoldPrinterV2.5源码\GoldPrinter\Backup\GoldPrinter.csproj">
+</Event><Event ErrorLevel="0" Project="GoldPrinter" Source="GoldPrinter.csproj.user" Description="项目用户文件成功备份为 D:\My Documents\MisGoldPrinter\GoldPrinterV2.5源码\GoldPrinter\Backup\GoldPrinter.csproj.user">
+</Event><Event ErrorLevel="0" Project="GoldPrinter" Source="AssemblyInfo.cs" Description="文件已成功备份为 D:\My Documents\MisGoldPrinter\GoldPrinterV2.5源码\GoldPrinter\Backup\AssemblyInfo.cs">
+</Event><Event ErrorLevel="0" Project="GoldPrinter" Source="ChineseMoney.cs" Description="文件已成功备份为 D:\My Documents\MisGoldPrinter\GoldPrinterV2.5源码\GoldPrinter\Backup\ChineseMoney.cs">
+</Event><Event ErrorLevel="0" Project="GoldPrinter" Source="Excel\Enum\Enum.cs" Description="文件已成功备份为 D:\My Documents\MisGoldPrinter\GoldPrinterV2.5源码\GoldPrinter\Backup\Excel\Enum\Enum.cs">
+</Event><Event ErrorLevel="0" Project="GoldPrinter" Source="Excel\ExcelAccess.cs" Description="文件已成功备份为 D:\My Documents\MisGoldPrinter\GoldPrinterV2.5源码\GoldPrinter\Backup\Excel\ExcelAccess.cs">
+</Event><Event ErrorLevel="0" Project="GoldPrinter" Source="Excel\ExcelBase.cs" Description="文件已成功备份为 D:\My Documents\MisGoldPrinter\GoldPrinterV2.5源码\GoldPrinter\Backup\Excel\ExcelBase.cs">
+</Event><Event ErrorLevel="0" Project="GoldPrinter" Source="Excel\Exception\Exception.cs" Description="文件已成功备份为 D:\My Documents\MisGoldPrinter\GoldPrinterV2.5源码\GoldPrinter\Backup\Excel\Exception\Exception.cs">
+</Event><Event ErrorLevel="0" Project="GoldPrinter" Source="MisGoldPrinter.cs" Description="文件已成功备份为 D:\My Documents\MisGoldPrinter\GoldPrinterV2.5源码\GoldPrinter\Backup\MisGoldPrinter.cs">
+</Event><Event ErrorLevel="0" Project="GoldPrinter" Source="PrinterPageSetting\Delegate.cs" Description="文件已成功备份为 D:\My Documents\MisGoldPrinter\GoldPrinterV2.5源码\GoldPrinter\Backup\PrinterPageSetting\Delegate.cs">
+</Event><Event ErrorLevel="0" Project="GoldPrinter" Source="PrinterPageSetting\Enum\Enum.cs" Description="文件已成功备份为 D:\My Documents\MisGoldPrinter\GoldPrinterV2.5源码\GoldPrinter\Backup\PrinterPageSetting\Enum\Enum.cs">
+</Event><Event ErrorLevel="0" Project="GoldPrinter" Source="PrinterPageSetting\Exception\Exception.cs" Description="文件已成功备份为 D:\My Documents\MisGoldPrinter\GoldPrinterV2.5源码\GoldPrinter\Backup\PrinterPageSetting\Exception\Exception.cs">
+</Event><Event ErrorLevel="0" Project="GoldPrinter" Source="PrinterPageSetting\IPrinterPageSetting.cs" Description="文件已成功备份为 D:\My Documents\MisGoldPrinter\GoldPrinterV2.5源码\GoldPrinter\Backup\PrinterPageSetting\IPrinterPageSetting.cs">
+</Event><Event ErrorLevel="0" Project="GoldPrinter" Source="PrinterPageSetting\PrinterPageSetting.cs" Description="文件已成功备份为 D:\My Documents\MisGoldPrinter\GoldPrinterV2.5源码\GoldPrinter\Backup\PrinterPageSetting\PrinterPageSetting.cs">
+</Event><Event ErrorLevel="0" Project="GoldPrinter" Source="PrinterPageSetting\WebPrinterPageSetting.cs" Description="文件已成功备份为 D:\My Documents\MisGoldPrinter\GoldPrinterV2.5源码\GoldPrinter\Backup\PrinterPageSetting\WebPrinterPageSetting.cs">
+</Event><Event ErrorLevel="0" Project="GoldPrinter" Source="PrinterPageSetting\WinPrinterPageSetting.cs" Description="文件已成功备份为 D:\My Documents\MisGoldPrinter\GoldPrinterV2.5源码\GoldPrinter\Backup\PrinterPageSetting\WinPrinterPageSetting.cs">
+</Event><Event ErrorLevel="0" Project="GoldPrinter" Source="Service\Base\DrawBase.cs" Description="文件已成功备份为 D:\My Documents\MisGoldPrinter\GoldPrinterV2.5源码\GoldPrinter\Backup\Service\Base\DrawBase.cs">
+</Event><Event ErrorLevel="0" Project="GoldPrinter" Source="Service\Base\DrawRectangle.cs" Description="文件已成功备份为 D:\My Documents\MisGoldPrinter\GoldPrinterV2.5源码\GoldPrinter\Backup\Service\Base\DrawRectangle.cs">
+</Event><Event ErrorLevel="0" Project="GoldPrinter" Source="Service\Base\DrawText.cs" Description="文件已成功备份为 D:\My Documents\MisGoldPrinter\GoldPrinterV2.5源码\GoldPrinter\Backup\Service\Base\DrawText.cs">
+</Event><Event ErrorLevel="0" Project="GoldPrinter" Source="Service\Base\IDraw.cs" Description="文件已成功备份为 D:\My Documents\MisGoldPrinter\GoldPrinterV2.5源码\GoldPrinter\Backup\Service\Base\IDraw.cs">
+</Event><Event ErrorLevel="0" Project="GoldPrinter" Source="Service\Base\Printer.cs" Description="文件已成功备份为 D:\My Documents\MisGoldPrinter\GoldPrinterV2.5源码\GoldPrinter\Backup\Service\Base\Printer.cs">
+</Event><Event ErrorLevel="0" Project="GoldPrinter" Source="Service\Base\PrinterBase.cs" Description="文件已成功备份为 D:\My Documents\MisGoldPrinter\GoldPrinterV2.5源码\GoldPrinter\Backup\Service\Base\PrinterBase.cs">
+</Event><Event ErrorLevel="0" Project="GoldPrinter" Source="Service\Base\PrinterMargins.cs" Description="文件已成功备份为 D:\My Documents\MisGoldPrinter\GoldPrinterV2.5源码\GoldPrinter\Backup\Service\Base\PrinterMargins.cs">
+</Event><Event ErrorLevel="0" Project="GoldPrinter" Source="Service\Base\PrinterSingleton.cs" Description="文件已成功备份为 D:\My Documents\MisGoldPrinter\GoldPrinterV2.5源码\GoldPrinter\Backup\Service\Base\PrinterSingleton.cs">
+</Event><Event ErrorLevel="0" Project="GoldPrinter" Source="Service\Base\Sewing.cs" Description="文件已成功备份为 D:\My Documents\MisGoldPrinter\GoldPrinterV2.5源码\GoldPrinter\Backup\Service\Base\Sewing.cs">
+</Event><Event ErrorLevel="0" Project="GoldPrinter" Source="Service\Grid\CellRectangle.cs" Description="文件已成功备份为 D:\My Documents\MisGoldPrinter\GoldPrinterV2.5源码\GoldPrinter\Backup\Service\Grid\CellRectangle.cs">
+</Event><Event ErrorLevel="0" Project="GoldPrinter" Source="Service\Grid\DrawGrid.cs" Description="文件已成功备份为 D:\My Documents\MisGoldPrinter\GoldPrinterV2.5源码\GoldPrinter\Backup\Service\Grid\DrawGrid.cs">
+</Event><Event ErrorLevel="0" Project="GoldPrinter" Source="Service\Grid\GoldGrid.cs" Description="文件已成功备份为 D:\My Documents\MisGoldPrinter\GoldPrinterV2.5源码\GoldPrinter\Backup\Service\Grid\GoldGrid.cs">
+</Event><Event ErrorLevel="0" Project="GoldPrinter" Source="Service\Grid\GridBase.cs" Description="文件已成功备份为 D:\My Documents\MisGoldPrinter\GoldPrinterV2.5源码\GoldPrinter\Backup\Service\Grid\GridBase.cs">
+</Event><Event ErrorLevel="0" Project="GoldPrinter" Source="Service\Grid\GridEnum.cs" Description="文件已成功备份为 D:\My Documents\MisGoldPrinter\GoldPrinterV2.5源码\GoldPrinter\Backup\Service\Grid\GridEnum.cs">
+</Event><Event ErrorLevel="0" Project="GoldPrinter" Source="Service\Grid\IGrid.cs" Description="文件已成功备份为 D:\My Documents\MisGoldPrinter\GoldPrinterV2.5源码\GoldPrinter\Backup\Service\Grid\IGrid.cs">
+</Event><Event ErrorLevel="0" Project="GoldPrinter" Source="Service\Grid\PrinterTabStops.cs" Description="文件已成功备份为 D:\My Documents\MisGoldPrinter\GoldPrinterV2.5源码\GoldPrinter\Backup\Service\Grid\PrinterTabStops.cs">
+</Event><Event ErrorLevel="0" Project="GoldPrinter" Source="SysObject\Body.cs" Description="文件已成功备份为 D:\My Documents\MisGoldPrinter\GoldPrinterV2.5源码\GoldPrinter\Backup\SysObject\Body.cs">
+</Event><Event ErrorLevel="0" Project="GoldPrinter" Source="SysObject\Bottom.cs" Description="文件已成功备份为 D:\My Documents\MisGoldPrinter\GoldPrinterV2.5源码\GoldPrinter\Backup\SysObject\Bottom.cs">
+</Event><Event ErrorLevel="0" Project="GoldPrinter" Source="SysObject\Caption.cs" Description="文件已成功备份为 D:\My Documents\MisGoldPrinter\GoldPrinterV2.5源码\GoldPrinter\Backup\SysObject\Caption.cs">
+</Event><Event ErrorLevel="0" Project="GoldPrinter" Source="SysObject\Footer.cs" Description="文件已成功备份为 D:\My Documents\MisGoldPrinter\GoldPrinterV2.5源码\GoldPrinter\Backup\SysObject\Footer.cs">
+</Event><Event ErrorLevel="0" Project="GoldPrinter" Source="SysObject\Header.cs" Description="文件已成功备份为 D:\My Documents\MisGoldPrinter\GoldPrinterV2.5源码\GoldPrinter\Backup\SysObject\Header.cs">
+</Event><Event ErrorLevel="0" Project="GoldPrinter" Source="SysObject\MultiHeader.cs" Description="文件已成功备份为 D:\My Documents\MisGoldPrinter\GoldPrinterV2.5源码\GoldPrinter\Backup\SysObject\MultiHeader.cs">
+</Event><Event ErrorLevel="0" Project="GoldPrinter" Source="SysObject\Outer.cs" Description="文件已成功备份为 D:\My Documents\MisGoldPrinter\GoldPrinterV2.5源码\GoldPrinter\Backup\SysObject\Outer.cs">
+</Event><Event ErrorLevel="0" Project="GoldPrinter" Source="SysObject\Title.cs" Description="文件已成功备份为 D:\My Documents\MisGoldPrinter\GoldPrinterV2.5源码\GoldPrinter\Backup\SysObject\Title.cs">
+</Event><Event ErrorLevel="0" Project="GoldPrinter" Source="SysObject\Top.cs" Description="文件已成功备份为 D:\My Documents\MisGoldPrinter\GoldPrinterV2.5源码\GoldPrinter\Backup\SysObject\Top.cs">
+</Event><Event ErrorLevel="0" Project="GoldPrinter" Source="TimeDef.cs" Description="文件已成功备份为 D:\My Documents\MisGoldPrinter\GoldPrinterV2.5源码\GoldPrinter\Backup\TimeDef.cs">
+</Event><Event ErrorLevel="0" Project="GoldPrinter" Source="Vs2005DataGridView打印\DataGridViewListViewHelper.cs" Description="文件已成功备份为 D:\My Documents\MisGoldPrinter\GoldPrinterV2.5源码\GoldPrinter\Backup\Vs2005DataGridView打印\DataGridViewListViewHelper.cs">
+</Event><Event ErrorLevel="0" Project="GoldPrinter" Source="GoldPrinter.csproj" Description="项目已成功转换">
+</Event><Event ErrorLevel="3" Project="GoldPrinter" Source="GoldPrinter.csproj" Description="Converted">
+</Event><Event ErrorLevel="0" Project="" Source="GoldPrinter.sln" Description="成功转换解决方案">
+</Event><Event ErrorLevel="3" Project="" Source="GoldPrinter.sln" Description="Converted">
+</Event><Event ErrorLevel="0" Project="GoldPrinter" Source="GoldPrinter.csproj" Description="扫描完成: 项目文件不需要升级。">
+</Event></UpgradeLog>

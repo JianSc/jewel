@@ -1,0 +1,10 @@
+F:\Jewel\Analysis\bin\Debug\Analysis.dll
+F:\Jewel\Analysis\bin\Debug\Analysis.pdb
+F:\Jewel\Analysis\obj\Debug\ResolveAssemblyReference.cache
+F:\Jewel\Analysis\obj\Debug\Analysis.dll
+F:\Jewel\Analysis\obj\Debug\Analysis.pdb
+F:\Jewel\Analysis\obj\Debug\Analysis.销售统计.resources
+F:\Jewel\Analysis\obj\Debug\Analysis.csproj.GenerateResource.Cache
+F:\Jewel\Analysis\obj\Debug\Analysis.Properties.Resources.resources
+F:\Jewel\Analysis\bin\Debug\MSG.dll
+F:\Jewel\Analysis\bin\Debug\MSG.pdb

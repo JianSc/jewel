@@ -1,0 +1,2363 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>GoldPrinter</name>
+    </assembly>
+    <members>
+        <member name="T:GoldPrinter.ExcelConstants.BordersEdge">
+            <summary>
+            Excel单元格范围内的边框及内部网格线
+            </summary>
+        </member>
+        <member name="T:GoldPrinter.ExcelConstants.BordersLineStyle">
+            <summary>
+            Excel线样
+            </summary>
+        </member>
+        <member name="T:GoldPrinter.ExcelConstants.BordersWeight">
+            <summary>
+            Excel单元格范围内的边框及内部网格线粗细
+            </summary>
+        </member>
+        <member name="T:GoldPrinter.ExceptionExcelCreateInstance">
+            <summary>
+            创建Excel类实例时错误
+            </summary>
+        </member>
+        <member name="T:GoldPrinter.ExceptionExcelOpen">
+            <summary>
+            打开Excel时错误
+            </summary>
+        </member>
+        <member name="T:GoldPrinter.ExcelAccess">
+            <summary>
+            该类主要定义Excel的程序对象，启动Excel并打印及保存。可能依赖于Interop.VBIDE及Interop.Microsoft.Office.Core，如果需要，请加上。
+            
+            作 者：长江支流(周方勇)
+            Email：flygoldfish@163.com  QQ：150439795
+            网 址：www.webmis.com.cn
+            ★★★★★您可以免费使用此程序，但是请您完整保留此说明，以维护知识产权★★★★★
+            
+            </summary>
+        </member>
+        <member name="T:GoldPrinter.ExcelBase">
+            <summary>
+            该类主要定义Excel的程序对象，启动Excel并打印及保存。可能依赖于Interop.VBIDE及Interop.Microsoft.Office.Core，如果需要，请加上。
+            
+            作 者：长江支流(周方勇)
+            Email：flygoldfish@163.com  QQ：150439795
+            网 址：www.webmis.com.cn
+            ★★★★★您可以免费使用此程序，但是请您完整保留此说明，以维护知识产权★★★★★
+            
+            </summary>
+        </member>
+        <member name="M:GoldPrinter.ExcelBase.#ctor">
+            <summary>
+            创建立Excel新的实例
+            </summary>
+        </member>
+        <member name="M:GoldPrinter.ExcelBase.Open">
+            <summary>
+            打开Excel，并建立默认的Workbooks。
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:GoldPrinter.ExcelBase.Open(System.String)">
+            <summary>
+            根据现有工作薄模板打开，如果指定的模板不存在，则用默认的空模板
+            </summary>
+            <param name="p_templateFileName">用作模板的工作薄文件名</param>
+        </member>
+        <member name="M:GoldPrinter.ExcelBase.Close">
+            <summary>
+            关闭
+            </summary>
+        </member>
+        <member name="M:GoldPrinter.ExcelBase.ShowExcel">
+            <summary>
+            显示Excel
+            </summary>
+        </member>
+        <member name="M:GoldPrinter.ExcelBase.PrintPreview">
+            <summary>
+            用Excel打印预览，如果要显示Excel窗口，请设置IsVisibledExcel 
+            </summary>
+        </member>
+        <member name="M:GoldPrinter.ExcelBase.Print">
+            <summary>
+            用Excel打印，如果要显示Excel窗口，请设置IsVisibledExcel 
+            </summary>
+        </member>
+        <member name="M:GoldPrinter.ExcelBase.SaveAs(System.String,System.Boolean)">
+            <summary>
+            另存。如果保存成功，则返回true，否则，如果保存不成功或者如果已存在文件但是选择了不替换也返回false
+            </summary>
+            <param name="p_fileName">将要保存的文件名</param>
+            <param name="p_ReplaceExistsFileName">如果文件存在，则替换</param>
+        </member>
+        <member name="M:GoldPrinter.ExcelBase.GetRange(System.Int32,System.Int32)">
+            <summary>
+            获取指定单元格或指定范围内的单元格，行索引为从1开始的数字，最大65536，列索引为A~Z、AA~AZ、BA~BZ...HA~HZ、IA~IV的字母及组合，也可以是1-65536数字。
+            </summary>
+            <param name="p_rowIndex">单元格行索引，从1开始</param>
+            <param name="p_colIndex">单元格列索引，从1开始，列索引也可以用字母A到Z或字母组合AA~AZ，最大IV的Excel字母索引</param>
+            <returns></returns>
+        </member>
+        <member name="M:GoldPrinter.ExcelBase.GetRange(System.Int32,System.String)">
+            <param name="p_colChars">单元格列字母及组合索引，从A开始</param>
+        </member>
+        <member name="M:GoldPrinter.ExcelBase.GetRange(System.Int32,System.Int32,System.Int32,System.Int32)">
+            <param name="p_startRowIndex">指定单元范围起始行索引，从1开始</param>
+            <param name="p_startColIndex">指定单元范围起始列数字索引，从1开始</param>
+            <param name="p_endRowIndex">指定单元范围结束行索引</param>
+            <param name="p_endColIndex">指定单元范围结束列数字索引</param>
+        </member>
+        <member name="M:GoldPrinter.ExcelBase.GetRange(System.Int32,System.String,System.Int32,System.String)">
+            <param name="p_startChars">指定单元范围起始列字母及组合索引</param>
+            <param name="p_endChars">指定单元范围结束列字母及组合索引</param>
+        </member>
+        <member name="M:GoldPrinter.ExcelBase.MergeCells(Excel.Range)">
+            <summary>
+            合并指定范围内单元格，合并后，默认居中
+            </summary>
+            <param name="p_Range"></param>
+        </member>
+        <member name="M:GoldPrinter.ExcelBase.InsertVPageBreaks(System.Int32)">
+            <summary>
+            在指定的行上插入分页符
+            </summary>
+            <param name="p_rowIndex">行索引</param>
+        </member>
+        <member name="M:GoldPrinter.ExcelBase.InsertRow(System.Int32)">
+            <summary>
+            在指定的行上插入一整行
+            </summary>
+            <param name="p_rowIndex">行索引</param>
+        </member>
+        <member name="M:GoldPrinter.ExcelBase.InsertRow(System.Int32,System.Int32)">
+            <summary>
+            用模板行在指定的行上插入，即Excel的插入复制单元格
+            </summary>
+            <param name="p_rowIndex"></param>
+            <param name="p_templateRowIndex"></param>
+        </member>
+        <member name="M:GoldPrinter.ExcelBase.InsertColumn(System.Int32)">
+            <summary>
+            在指定的列上插入一整列
+            </summary>
+            <param name="p_colIndex">列索引</param>
+        </member>
+        <member name="M:GoldPrinter.ExcelBase.InsertColumn(System.String)">
+            <summary>
+            在指定的列上插入一整列
+            </summary>
+            <param name="p_colChars">列字母或组合</param>
+        </member>
+        <member name="M:GoldPrinter.ExcelBase.DeleteRow(System.Int32)">
+            <summary>
+            删除指定的整行
+            </summary>
+            <param name="p_rowIndex">行索引</param>
+        </member>
+        <member name="M:GoldPrinter.ExcelBase.DeleteColumn(System.Int32)">
+            <summary>
+            删除指定的整列
+            </summary>
+            <param name="p_colIndex">列索引</param>
+        </member>
+        <member name="M:GoldPrinter.ExcelBase.DeleteColumn(System.String)">
+            <summary>
+            删除指定的整列
+            </summary>
+            <param name="p_colChars">列字母或组合</param>
+        </member>
+        <member name="M:GoldPrinter.ExcelBase.SetBordersEdge(Excel.Range,GoldPrinter.ExcelConstants.BordersEdge)">
+            <summary>
+            用连续的普通粗细的线设置指定范围内的边界
+            </summary>
+            <param name="p_Range"></param>
+            <param name="p_BordersEdge"></param>
+        </member>
+        <member name="P:GoldPrinter.ExcelBase.Application">
+            <summary>
+            Excel应用程序
+            </summary>
+        </member>
+        <member name="P:GoldPrinter.ExcelBase.Workbooks">
+            <summary>
+            Excel工作薄，默认只有一个，用Open([Template])创建
+            </summary>
+        </member>
+        <member name="P:GoldPrinter.ExcelBase.IsVisibledExcel">
+            <summary>
+            打印或预览时是否还要显示Excel窗体
+            </summary>
+        </member>
+        <member name="P:GoldPrinter.ExcelBase.FormCaption">
+            <summary>
+            打印预览Excel窗体的标题栏
+            </summary>
+        </member>
+        <member name="M:GoldPrinter.ExcelAccess.MergeCells(System.Int32,System.Int32,System.Int32,System.Int32)">
+            <summary>
+            合并指定范围内单元格
+            </summary>
+            <param name="p_startRowIndex">起始行索引</param>
+            <param name="p_startColIndex">起始列索引，可以是数字或字母及组合索引</param>
+            <param name="p_endRowIndex">结束行索引</param>
+            <param name="p_endColIndex">结束列索引，可以是数字或字母及组合索引</param>
+        </member>
+        <member name="M:GoldPrinter.ExcelAccess.MergeCells(System.Int32,System.String,System.Int32,System.String)">
+            <summary>
+            合并指定范围内单元格
+            </summary>
+            <param name="p_startRowIndex">起始行索引</param>
+            <param name="p_startColChars">起始列索引，可以是数字或字母及组合索引</param>
+            <param name="p_endRowIndex">结束行索引</param>
+            <param name="p_endColChars">结束列索引，可以是数字或字母及组合索引</param>
+        </member>
+        <member name="M:GoldPrinter.ExcelAccess.SetBordersEdge(System.Int32,System.Int32,GoldPrinter.ExcelConstants.BordersEdge,GoldPrinter.ExcelConstants.BordersLineStyle,GoldPrinter.ExcelConstants.BordersWeight)">
+            <summary>
+            设置指定范围边框（左、顶、右、底、往右下对角线、往右上对角线、内部水平线、内部垂直线、无线）线，并可指定线的样式及线粗细
+            </summary>
+            <param name="p_rowIndex">行索引，也可以指定起始行、终止行索引</param>
+            <param name="p_colIndex">列索引，也可以指定起始列、终止列数字或字母及组合索引</param>
+            <param name="p_BordersEdge">边框：左、顶、右、底、往右下对角线、往右上对角线、内部水平线、内部垂直线、无线</param>
+            <param name="p_BordersLineStyle">线条样式：无、虚线、点线等，看Excel便知</param>
+            <param name="p_BordersWeight">粗细</param>
+        </member>
+        <member name="M:GoldPrinter.ExcelAccess.SetBordersEdge(System.Int32,System.Int32,System.Int32,System.Int32,System.Boolean)">
+            <summary>
+            设置指定范围内边界及内部网格线
+            </summary>
+            <param name="p_startRowIndex"></param>
+            <param name="p_startColIndex"></param>
+            <param name="p_endRowIndex"></param>
+            <param name="p_endColIndex"></param>
+            <param name="p_endColIndex">IsBordersOrBordersGrid，true只输出四周的边框，否则输出边框与网格线</param>
+        </member>
+        <member name="M:GoldPrinter.ExcelAccess.ClearBordersEdge(System.Int32,System.Int32)">
+            <summary>
+            清除用SetBordersEdge设置的边框内的所有线
+            </summary>
+            <param name="p_rowIndex">行索引，也可以指定起始行、终止行索引</param>
+            <param name="p_colIndex">列索引，也可以指定起始列、终止列数字或字母及组合索引</param>
+        </member>
+        <member name="T:GoldPrinter.PrintModeFlag">
+            <summary>
+            打印方式
+            </summary>
+        </member>
+        <member name="F:GoldPrinter.PrintModeFlag.Win">
+            <summary>
+            Windows窗口打印方式
+            </summary>
+        </member>
+        <member name="F:GoldPrinter.PrintModeFlag.Web">
+            <summary>
+            Web窗口打印方式
+            </summary>
+        </member>
+        <member name="T:GoldPrinter.ExceptionInvalidPrinter">
+            <summary>
+            无效的打印机，请在控制面版中添加打印机
+            </summary>
+        </member>
+        <member name="T:GoldPrinter.PrintPageDelegate">
+            <summary>
+            PrintDocument.PrintPage的委托定义
+            </summary>
+        </member>
+        <member name="T:GoldPrinter.ImportExcelDelegate">
+            <summary>
+            导出到Excel委托定义
+            </summary>
+        </member>
+        <member name="T:GoldPrinter.IPrinterPageSetting">
+            <summary>
+            IPrinterPageSetting 的接口，显示打印纸张设置、打印机设置、打印预览对话框。
+            
+            
+            作 者：长江支流(周方勇)
+            Email：flygoldfish@163.com  QQ：150439795
+            网 址：www.webmis.com.cn
+            ★★★★★您可以免费使用此程序，但是请您完整保留此说明，以维护知识产权★★★★★
+            
+            </summary>
+        </member>
+        <member name="M:GoldPrinter.IPrinterPageSetting.ShowPageSetupDialog">
+            <summary>
+            显示页面设置对话框，并返回PageSettings
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:GoldPrinter.IPrinterPageSetting.ShowPrintSetupDialog">
+            <summary>
+            显示打印机设置对话框，并返回PrinterSettings
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:GoldPrinter.IPrinterPageSetting.ShowPrintPreviewDialog">
+            <summary>
+            显示打印预览对话框
+            </summary>
+        </member>
+        <member name="P:GoldPrinter.IPrinterPageSetting.PrintDocument">
+            <summary>
+            获取或设置打印文档
+            </summary>
+        </member>
+        <member name="P:GoldPrinter.IPrinterPageSetting.PrintPageValue">
+            <summary>
+            关联一个方法，目的是让具体的打印由实例化者来操作。这里当属性使用，其实可以用PrintPage。
+            如PrinterPageSetting1.PrintPage = new PrintPageDelegate(this.PrintPageEventHandler);
+            </summary>
+        </member>
+        <member name="E:GoldPrinter.IPrinterPageSetting.PrintPage">
+            <summary>
+            当需要为当前页打印的输出时发生，如果对此不了解，就用PrintPageValue赋值也可以
+            </summary>
+        </member>
+        <member name="P:GoldPrinter.IPrinterPageSetting.ImportExcelValue">
+            <summary>
+            导出到Excel委托定义的实现
+            </summary>
+        </member>
+        <member name="T:GoldPrinter.PrinterPageSetting">
+            <summary>
+            封装页面设置、打印机设置、打印预览，适合于Window和Asp.Net，Web方式下请在配置文件中增加键PrintMode及值Web。
+            
+            作 者：长江支流(周方勇)
+            Email：flygoldfish@163.com  QQ：150439795
+            网 址：www.webmis.com.cn
+            ★★★★★您可以免费使用此程序，但是请您完整保留此说明，以维护知识产权★★★★★
+            
+            </summary>
+        </member>
+        <member name="M:GoldPrinter.PrinterPageSetting.#ctor">
+            <summary>
+             封装页面设置、打印机设置、打印预览，适合于Window和Asp.Net，Web方式下请在配置文件中增加键PrintMode及值Web，也可以实例化后设置PrintMode属性为PrintModeFlag.Web。
+            </summary>
+        </member>
+        <member name="M:GoldPrinter.PrinterPageSetting.#ctor(System.Drawing.Printing.PrintDocument)">
+            <summary>
+             封装页面设置、打印机设置、打印预览，适合于Window和Asp.Net，Web方式下请在配置文件中增加键PrintMode及值Web，也可以实例化后设置PrintMode属性为PrintModeFlag.Web。
+            </summary>
+            <param name="printDocument">如果为null，则提供一个默认的PrintDocument</param>
+        </member>
+        <member name="M:GoldPrinter.PrinterPageSetting.ShowPageSetupDialog">
+            <summary>
+            显示页面设置对话框，并返回PageSettings
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:GoldPrinter.PrinterPageSetting.ShowPrintSetupDialog">
+            <summary>
+            显示打印机设置对话框，并返回PrinterSettings
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:GoldPrinter.PrinterPageSetting.ShowPrintPreviewDialog">
+            <summary>
+            显示打印预览对话框
+            </summary>
+        </member>
+        <member name="P:GoldPrinter.PrinterPageSetting.PrintDocument">
+            <summary>
+            获取或设置打印文档
+            </summary>
+        </member>
+        <member name="P:GoldPrinter.PrinterPageSetting.PrintPageValue">
+            <summary>
+            关联一个方法，目的是让具体的打印由实例化者来操作。这里当然属性使用，其实可以用PrintPage。
+            如PrinterPageSetting1.PrintPage += new PrintPageDelegate(this.PrintPageEventHandler);
+            PrinterPageSetting1.PrintPageValue = new PrintPageDelegate(this.PrintPageEventHandler);
+            </summary>
+        </member>
+        <member name="E:GoldPrinter.PrinterPageSetting.PrintPage">
+            <summary>
+            当需要为当前页打印的输出时发生，如果对此不了解，就用PrintPageValue赋值也可以
+            </summary>
+        </member>
+        <member name="P:GoldPrinter.PrinterPageSetting.ImportExcelValue">
+            <summary>
+            导出Excel的实现
+            </summary>
+        </member>
+        <member name="T:GoldPrinter.WebPrinterPageSetting">
+            <summary>
+            WebForm下的打印纸张设置、打印机设置、打印预览对话框。（***暂无实现，请查看作者关于Web打印方案，敬请密切关注作者网站或Blog发布消息***）。
+            
+            作 者：长江支流(周方勇)
+            Email：flygoldfish@163.com  QQ：150439795
+            网 址：www.webmis.com.cn
+            ★★★★★您可以免费使用此程序，但是请您完整保留此说明，以维护知识产权★★★★★
+            
+            </summary>
+        </member>
+        <member name="T:GoldPrinter.WinPrinterPageSetting">
+            <summary>
+            WinForm下的打印纸张设置、打印机设置、打印预览对话框。
+            
+            作 者：长江支流(周方勇)
+            Email：flygoldfish@163.com  QQ：150439795
+            网 址：www.webmis.com.cn
+            ★★★★★您可以免费使用此程序，但是请您完整保留此说明，以维护知识产权★★★★★
+            
+            </summary>
+        </member>
+        <member name="M:GoldPrinter.WinPrinterPageSetting.#ctor(System.Drawing.Printing.PrintDocument)">
+            <summary>
+            使用printDocument来初始化类的新实例，当printDocument为null时自动创建一个printDocument的实例
+            </summary>
+            <param name="printDocument">如果为null，则提供一个默认的PrintDocument</param>
+        </member>
+        <member name="M:GoldPrinter.WinPrinterPageSetting.ShowPageSetupDialog">
+            <summary>
+            显示页面设置对话框，并返回PageSettings
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:GoldPrinter.WinPrinterPageSetting.ShowPrintSetupDialog">
+            <summary>
+            显示打印机设置对话框，并返回PrinterSettings
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:GoldPrinter.WinPrinterPageSetting.ShowPrintPreviewDialog">
+            <summary>
+            显示打印预览对话框
+            </summary>
+        </member>
+        <member name="M:GoldPrinter.WinPrinterPageSetting.ShowPageSetupDialog(System.Drawing.Printing.PrintDocument)">
+            <summary>
+            页面设置对话框，可以独立使用
+            </summary>
+            <param name="printDocument"></param>
+            <returns></returns>
+            <remarks>
+            作    者：周方勇
+            修改日期：2004-08-07
+            </remarks>
+        </member>
+        <member name="M:GoldPrinter.WinPrinterPageSetting.ShowPrintSetupDialog(System.Drawing.Printing.PrintDocument)">
+            <summary>
+            打印设置对话框，可以独立使用
+            </summary>
+            <param name="printDocument"></param>
+            <returns></returns>
+            <remarks>
+            作    者：周方勇
+            修改日期：2004-08-07
+            </remarks>
+        </member>
+        <member name="M:GoldPrinter.WinPrinterPageSetting.ShowPrintPreviewDialog(System.Drawing.Printing.PrintDocument)">
+            <summary>
+            打印预览对话框，可以独立使用
+            </summary>
+            <param name="printDocument"></param>
+            <returns></returns>
+            <remarks>
+            作    者：周方勇
+            修改日期：2004-08-07
+            </remarks>
+        </member>
+        <member name="M:GoldPrinter.WinPrinterPageSetting.ThrowPrintDocumentNullException(System.Drawing.Printing.PrintDocument)">
+            <summary>
+            检查printDocument是否为空，空的话抛出异常
+            </summary>
+            <param name="printDocument"></param>
+        </member>
+        <member name="M:GoldPrinter.WinPrinterPageSetting.ShowInvalidPrinterException(System.Drawing.Printing.InvalidPrinterException)">
+            <summary>
+            显示没安装打印机时的提示信息
+            </summary>
+            <param name="e"></param>
+        </member>
+        <member name="M:GoldPrinter.WinPrinterPageSetting.ShowPrinterException(System.Exception)">
+            <summary>
+            显示打印机其它错误提示信息
+            </summary>
+            <param name="ex"></param>
+        </member>
+        <member name="P:GoldPrinter.WinPrinterPageSetting.PrintDocument">
+            <summary>
+            获取或设置打印文档
+            </summary>
+        </member>
+        <member name="P:GoldPrinter.WinPrinterPageSetting.PrintPageValue">
+            <summary>
+            一定要实例化此类后在调用打印/预览之前设置此属性，使之关联一个方法，目的是让具体的打印由实例化者来操作。这里当属性使用，其实可以用PrintPage。
+            意思就是告诉printerPageSetting打印的具体实现过程是PrintPageEventHandler
+            C#调用：
+            	PrinterPageSetting1.PrintPageValue = new PrintPageDelegate(this.PrintPageEventHandler);
+            VB调用：    
+               Me.printerPageSetting.PrintPageValue = New GoldPrinter.PrintPageDelegate(AddressOf printDocument_PrintPage)
+            </summary>
+        </member>
+        <member name="E:GoldPrinter.WinPrinterPageSetting.PrintPage">
+            <summary>
+            当需要为当前页打印的输出时发生，如果对此不了解，就用PrintPageValue赋值也可以
+            C#调用：
+            	PrinterPageSetting1.PrintPage += new PrintPageDelegate(this.PrintPageEventHandler);
+            VB调用：    
+               Me.printerPageSetting.PrintPageValue = New GoldPrinter.PrintPageDelegate(AddressOf printDocument_PrintPage)
+            </summary>
+        </member>
+        <member name="P:GoldPrinter.WinPrinterPageSetting.ImportExcelValue">
+            <summary>
+            导出Excel的实现
+            </summary>
+        </member>
+        <member name="T:GoldPrinter.DrawBase">
+            <summary>
+            绘制基本类，无法实例化。接口为IDraw（绘制接口，记法：在绘图表面Graphics绘制矩阵区域Rectangle用指定的画笔Brush、Pen绘制Draw()）
+            
+            作 者：长江支流(周方勇)
+            Email：flygoldfish@163.com  QQ：150439795
+            网 址：www.webmis.com.cn
+            ★★★★★您可以免费使用此程序，但是请您完整保留此说明，以维护知识产权★★★★★
+            
+            </summary>
+        </member>
+        <member name="T:GoldPrinter.IDraw">
+            <summary>
+            绘制接口，记法：在绘图表面Graphics绘制矩阵区域Rectangle（用指定的画笔Brush、Pen）绘制Draw()
+            
+            作 者：长江支流(周方勇)
+            Email：flygoldfish@163.com  QQ：150439795
+            网 址：www.webmis.com.cn
+            ★★★★★您可以免费使用此程序，但是请您完整保留此说明，以维护知识产权★★★★★
+            
+            </summary>
+        </member>
+        <member name="M:GoldPrinter.IDraw.Draw">
+            <summary>
+            绘制
+            </summary>
+        </member>
+        <member name="P:GoldPrinter.IDraw.Graphics">
+            <summary>
+            获取或设置绘图表面
+            </summary>
+        </member>
+        <member name="P:GoldPrinter.IDraw.Rectangle">
+            <summary>
+            获取或设置绘制区域
+            </summary>
+        </member>
+        <member name="M:GoldPrinter.DrawBase.Draw">
+            <summary>
+            绘制，抽象方法，必须由子类具体实现
+            </summary>
+        </member>
+        <member name="M:GoldPrinter.DrawBase.#ctor">
+            <summary>
+            绘制基本类，无法实例化
+            </summary>
+        </member>
+        <member name="M:GoldPrinter.DrawBase.Dispose">
+            <summary>
+            释放对象使用的所有资源
+            </summary>
+        </member>
+        <member name="P:GoldPrinter.DrawBase.Graphics">
+            <summary>
+            获取或设置绘图表面
+            </summary>
+        </member>
+        <member name="P:GoldPrinter.DrawBase.Rectangle">
+            <summary>
+            获取或设置绘制区域
+            </summary>
+        </member>
+        <member name="P:GoldPrinter.DrawBase.Pen">
+            <summary>
+            画笔
+            </summary>
+        </member>
+        <member name="P:GoldPrinter.DrawBase.Brush">
+            <summary>
+            画刷
+            </summary>
+        </member>
+        <member name="T:GoldPrinter.BordersEdgeFlag">
+            <summary>
+            矩形边框线，左、右、顶、底及四边、右下对角线、右上对角线。
+            
+            作 者：长江支流(周方勇)
+            Email：flygoldfish@163.com  QQ：150439795
+            网 址：www.webmis.com.cn
+            ★★★★★您可以免费使用此程序，但是请您完整保留此说明，以维护知识产权★★★★★
+            
+            </summary>
+        </member>
+        <member name="T:GoldPrinter.DrawRectangle">
+             <summary>
+             提供在绘图表面用指定的笔在指定的矩形区画线，如左、右、顶、底及四边、右下对角线、右上对角线，可以改变Pen来设置线颜色、宽度、样式。
+             
+             程序提供：周方勇(长江支流)
+             技术及合作Email：flygoldfish@sina.com
+            ★★★★★您可以免费使用此程序，但是请您保留此说明，以维护知识产权★★★★★
+             </summary>
+        </member>
+        <member name="M:GoldPrinter.DrawRectangle.#ctor">
+            <summary>
+            在绘图表面用指定的画笔在指定的矩形区绘制矩形或四周边框线或对角线
+            </summary>
+        </member>
+        <member name="M:GoldPrinter.DrawRectangle.Draw">
+            <summary>
+            绘形矩形或边框，如没指定BorderEdge，默认绘制整个矩形。
+            </summary>
+        </member>
+        <member name="M:GoldPrinter.DrawRectangle.FillRectangle">
+            <summary>
+            用背景颜色填充矩形
+            </summary>
+        </member>
+        <member name="M:GoldPrinter.DrawRectangle.DrawLeftLine">
+            <summary>
+            画矩形左端线
+            </summary>
+            <param name="g"></param>
+            <param name="rec"></param>
+        </member>
+        <member name="M:GoldPrinter.DrawRectangle.DrawRightLine">
+            <summary>
+            画矩形右端线
+            </summary>
+            <param name="g"></param>
+            <param name="rec"></param>
+        </member>
+        <member name="M:GoldPrinter.DrawRectangle.DrawTopLine">
+            <summary>
+            画矩形顶端线
+            </summary>
+            <param name="g"></param>
+            <param name="rec"></param>
+        </member>
+        <member name="M:GoldPrinter.DrawRectangle.DrawBottomLine">
+            <summary>
+            画矩形底端线
+            </summary>
+            <param name="g"></param>
+            <param name="rec"></param>
+        </member>
+        <member name="M:GoldPrinter.DrawRectangle.DrawDiagonalDownLine">
+            <summary>
+            画左上角到右下角的对角线
+            </summary>
+            <param name="g"></param>
+            <param name="rec"></param>
+        </member>
+        <member name="M:GoldPrinter.DrawRectangle.DrawDiagonalUpLine">
+            <summary>
+            画左下角到右上角的对角线
+            </summary>
+            <param name="g"></param>
+            <param name="rec"></param>
+        </member>
+        <member name="M:GoldPrinter.DrawRectangle.Draw(System.Drawing.Graphics,System.Drawing.Pen,System.Drawing.Rectangle)">
+            <summary>
+            画矩形线
+            </summary>
+            <param name="g"></param>
+            <param name="rec"></param>
+        </member>
+        <member name="M:GoldPrinter.DrawRectangle.DrawLeftLine(System.Drawing.Graphics,System.Drawing.Pen,System.Drawing.Rectangle)">
+            <summary>
+            画矩形左端线
+            </summary>
+            <param name="g"></param>
+            <param name="rec"></param>
+        </member>
+        <member name="M:GoldPrinter.DrawRectangle.DrawRightLine(System.Drawing.Graphics,System.Drawing.Pen,System.Drawing.Rectangle)">
+            <summary>
+            画矩形右端线
+            </summary>
+            <param name="g"></param>
+            <param name="rec"></param>
+        </member>
+        <member name="M:GoldPrinter.DrawRectangle.DrawTopLine(System.Drawing.Graphics,System.Drawing.Pen,System.Drawing.Rectangle)">
+            <summary>
+            画矩形顶端线
+            </summary>
+            <param name="g"></param>
+            <param name="rec"></param>
+        </member>
+        <member name="M:GoldPrinter.DrawRectangle.DrawBottomLine(System.Drawing.Graphics,System.Drawing.Pen,System.Drawing.Rectangle)">
+            <summary>
+            画矩形底端线
+            </summary>
+            <param name="g"></param>
+            <param name="rec"></param>
+        </member>
+        <member name="M:GoldPrinter.DrawRectangle.DrawDiagonalDownLine(System.Drawing.Graphics,System.Drawing.Pen,System.Drawing.Rectangle)">
+            <summary>
+            画左上角到右下角的对角线
+            </summary>
+            <param name="g"></param>
+            <param name="rec"></param>
+        </member>
+        <member name="M:GoldPrinter.DrawRectangle.DrawDiagonalUpLine(System.Drawing.Graphics,System.Drawing.Pen,System.Drawing.Rectangle)">
+            <summary>
+            画左下角到右上角的对角线
+            </summary>
+            <param name="g"></param>
+            <param name="rec"></param>
+        </member>
+        <member name="P:GoldPrinter.DrawRectangle.BordersEdge">
+            <summary>
+            获取或设置矩形边框线，有左、右、顶、底及四边、右下对角线、右上对角线等
+            </summary>
+        </member>
+        <member name="P:GoldPrinter.DrawRectangle.BackColor">
+            <summary>
+            获取或设置填充矩形的背景颜色， 默认为Color.White，只有改变为其它的颜色或显示调用FillRectangle()方法才会去绘背景
+            </summary>
+        </member>
+        <member name="T:GoldPrinter.DrawText">
+            <summary>
+            继承于DrawBase，在绘图表面Graphics绘制矩阵区域Rectangle用指定的画笔Brush、Pen绘制Draw() 格式为StringFormat、字体Font的文本Text。
+            
+            作 者：长江支流(周方勇)
+            Email：flygoldfish@163.com  QQ：150439795
+            网 址：www.webmis.com.cn
+            ★★★★★您可以免费使用此程序，但是请您完整保留此说明，以维护知识产权★★★★★
+            
+            </summary>
+        </member>
+        <member name="M:GoldPrinter.DrawText.#ctor">
+            <summary>
+            获取DrawText新的实例，默认字体为宋体10号，受限制行LineLimit格式绘制
+            </summary>
+        </member>
+        <member name="M:GoldPrinter.DrawText.#ctor(System.String)">
+            <param name="text">指定绘制的文本</param>
+        </member>
+        <member name="M:GoldPrinter.DrawText.Dispose">
+            <summary>
+            释放对象使用的所有资源
+            </summary>
+        </member>
+        <member name="M:GoldPrinter.DrawText.Draw">
+            <summary>
+            在绘图表面Graphics不为空的情况下，绘制矩阵区域Rectangle用指定的画笔Brush、Pen绘制Draw() 格式为StringFormat、字体Font的文本Text
+            </summary>
+        </member>
+        <member name="P:GoldPrinter.DrawText.Text">
+            <summary>
+            获取或设置要绘制的文本
+            </summary>
+        </member>
+        <member name="P:GoldPrinter.DrawText.Font">
+            <summary>
+            获取或设置绘制的文本字体
+            </summary>
+        </member>
+        <member name="P:GoldPrinter.DrawText.StringFormat">
+            <summary>
+            获取或设置要绘制的文本的格式，如行距
+            </summary>
+        </member>
+        <member name="P:GoldPrinter.DrawText.StartChar">
+            <summary>
+            获取或设置要绘制的文本时的起始字符，即从第几个开始。如果小于0则从最开始的符绘起，如大于或等于文本长度，则不绘制。
+            </summary>
+        </member>
+        <member name="P:GoldPrinter.DrawText.CharsFitted">
+            <summary>
+            获取绘制区内绘制的文本数
+            </summary>
+        </member>
+        <member name="P:GoldPrinter.DrawText.LinesFilled">
+            <summary>
+            获取绘制区内绘制的文本行数
+            </summary>
+        </member>
+        <member name="T:GoldPrinter.Printer">
+            <summary>
+            打印基类，继承于DrawBase,IPrinter。
+            
+            作 者：长江支流(周方勇)
+            Email：flygoldfish@163.com  QQ：150439795
+            网 址：www.webmis.com.cn
+            ★★★★★您可以免费使用此程序，但是请您完整保留此说明，以维护知识产权★★★★★
+            
+            </summary>
+        </member>
+        <member name="T:GoldPrinter.PrinterBase">
+            <summary>
+            PrinterBase打印基类，描述打印文档及边距信息，继承于DrawBase(IDraw)，不能实倒化。
+            
+            
+            作 者：长江支流(周方勇)
+            Email：flygoldfish@163.com  QQ：150439795
+            网 址：www.webmis.com.cn
+            ★★★★★您可以免费使用此程序，但是请您完整保留此说明，以维护知识产权★★★★★
+            
+            </summary>
+        </member>
+        <member name="M:GoldPrinter.PrinterBase.SetPageInfo">
+            <summary>
+            设置PrintDocument后可能影响到一些变量的变动，如PrintDocument改变了，就要重求PageWidth\Height等，装订变了，就会影响PrinterMargins等
+            </summary>
+        </member>
+        <member name="P:GoldPrinter.PrinterBase.PrintDocument">
+            <summary>
+            获取或设置打印文档，PrintDocument的改变将直接影响页边距等，但为了效率，请手动调用CalculatePageInfo()才去计算。
+            </summary>
+        </member>
+        <member name="P:GoldPrinter.PrinterBase.PrinterMargins">
+            <summary>
+            获取或设置打印页的边距及有效打印宽及高
+            </summary>
+        </member>
+        <member name="P:GoldPrinter.PrinterBase.PageWidth">
+            <summary>
+            获取页面总宽，包括页边距
+            </summary>
+        </member>
+        <member name="P:GoldPrinter.PrinterBase.PageHeight">
+            <summary>
+            获取页面总高，包括页边距
+            </summary>
+        </member>
+        <member name="P:GoldPrinter.PrinterBase.LeftMargin">
+            <summary>
+            获取页左边距
+            </summary>
+        </member>
+        <member name="P:GoldPrinter.PrinterBase.RightMargin">
+            <summary>
+            获取页右边距
+            </summary>
+        </member>
+        <member name="P:GoldPrinter.PrinterBase.TopMargin">
+            <summary>
+            获取页顶边距
+            </summary>
+        </member>
+        <member name="P:GoldPrinter.PrinterBase.BottomMargin">
+            <summary>
+            获取页底边距
+            </summary>
+        </member>
+        <member name="M:GoldPrinter.Printer.#ctor">
+            <summary>
+            打印类
+            </summary>
+        </member>
+        <member name="M:GoldPrinter.Printer.TextWidth(System.String)">
+            <summary>
+            获取文本的宽，最宽不会超过有效打印页的宽
+            </summary>
+            <param name="text"></param>
+            <returns></returns>
+        </member>
+        <member name="M:GoldPrinter.Printer.TextHeight(System.String)">
+            <summary>
+            获取文本的高，测量基宽为有效打印页的宽
+            </summary>
+            <param name="text"></param>
+            <returns></returns>
+        </member>
+        <member name="M:GoldPrinter.Printer.TextHeight">
+            <summary>
+            获取文本的行距
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:GoldPrinter.Printer.DrawPrinterMargins">
+            <summary>
+            绘制印区域
+            </summary>
+        </member>
+        <member name="M:GoldPrinter.Printer.DrawSewing">
+            <summary>
+            绘制装订线
+            </summary>
+        </member>
+        <member name="M:GoldPrinter.Printer.Draw">
+            <summary>
+            在绘图表面画图，这里没有实际的绘图，仅用CheckGraphics()检测了Graphics是否为空，实际的绘图过程由继承者去画。可以重写CheckGraphics()。
+            </summary>
+        </member>
+        <member name="P:GoldPrinter.Printer.Sewing">
+            <summary>
+            获取或设置装订线预留，装订线Sewing不再影响页边距等，影响页边距仅仅是PrintDocument。
+            </summary>
+        </member>
+        <member name="P:GoldPrinter.Printer.Font">
+            <summary>
+            绘制对象文本字体
+            </summary>
+        </member>
+        <member name="P:GoldPrinter.Printer.IsDrawAllPage">
+            <summary>
+            多页打印时，每页是否都绘制，默认否
+            </summary>
+        </member>
+        <member name="P:GoldPrinter.Printer.Height">
+            <summary>
+            获取或设置对象的高
+            </summary>
+        </member>
+        <member name="P:GoldPrinter.Printer.MoveX">
+            <summary>
+            绘图起始点相对移动值
+            </summary>
+        </member>
+        <member name="P:GoldPrinter.Printer.MoveY">
+            <summary>
+            绘图起始点相对移动值
+            </summary>
+        </member>
+        <member name="T:GoldPrinter.PrinterMargins">
+            <summary>
+            继承于Margins，用于描述打印页的边距及有效打印宽及高。
+            注意Margins使用的默认单位是PrinterUnit.Display即百分之一英寸即0.01。
+            
+            作 者：长江支流(周方勇)
+            Email：flygoldfish@163.com  QQ：150439795
+            网 址：www.webmis.com.cn
+            ★★★★★您可以免费使用此程序，但是请您完整保留此说明，以维护知识产权★★★★★
+            
+            </summary>
+        </member>
+        <member name="M:GoldPrinter.PrinterMargins.#ctor">
+            <summary>
+            使用 1 个单位（没有具体指明是英寸还是什么）边距初始化 System.Drawing.Printing.Margins 类的新实例。
+            </summary>
+        </member>
+        <member name="M:GoldPrinter.PrinterMargins.#ctor(System.Int32,System.Int32,System.Int32,System.Int32,System.Int32,System.Int32)">
+            <summary>
+            用指定的边距及有效打印宽、高初始类的新实例
+            </summary>
+            <param name="left">左边距</param>
+            <param name="right">右边距</param>
+            <param name="top">上边距</param>
+            <param name="bottom">下边距</param>
+            <param name="width">有效打印区的宽</param>
+            <param name="height">有效打印区的高</param>
+        </member>
+        <member name="M:GoldPrinter.PrinterMargins.#ctor(System.Drawing.Printing.PrintDocument)">
+            <summary>
+            根据指定的打印文档对象初始实例化对象的 left,right,top,bottom,width,height边距及有效打印区的宽、高
+            </summary>
+            <param name="printDocument"></param>
+        </member>
+        <member name="M:GoldPrinter.PrinterMargins.GetPrinterMargins(System.Drawing.Printing.PrintDocument)">
+            <summary>
+            通过PrintDocument获取一个PrinterMargins对象
+            </summary>
+            <param name="printDocument"></param>
+            <returns></returns>
+        </member>
+        <member name="P:GoldPrinter.PrinterMargins.Width">
+            <summary>
+            获取或设置有效打印宽
+            </summary>
+        </member>
+        <member name="P:GoldPrinter.PrinterMargins.Height">
+            <summary>
+            获取或设置有效打印高
+            </summary>
+        </member>
+        <member name="P:GoldPrinter.PrinterMargins.X1">
+            <summary>
+            获取有效打印区左边边界的X横坐标
+            </summary>
+        </member>
+        <member name="P:GoldPrinter.PrinterMargins.X2">
+            <summary>
+            获取有效打印区右边边界的X横坐标
+            </summary>
+        </member>
+        <member name="P:GoldPrinter.PrinterMargins.Y1">
+            <summary>
+            获取有效打印区上边边界的Y纵坐标
+            </summary>
+        </member>
+        <member name="P:GoldPrinter.PrinterMargins.Y2">
+            <summary>
+            获取有效打印区下边边界的Y纵坐标
+            </summary>
+        </member>
+        <member name="T:GoldPrinter.PrinterSingleton">
+            <summary>
+            定义打印过程中单件,即在系统过程中只会实例化一次的对象，并且只有同一个对象。本类不能实例化，但提供静态方法
+            原因之一是大家公用，但最重要的一个原因是改变PrintDocument会引起PrinterMargins的变化，而每次计算需要花好多的时间，影响效率。
+            
+            作 者：长江支流(周方勇)
+            Email：flygoldfish@163.com  QQ：150439795
+            网 址：www.webmis.com.cn
+            ★★★★★您可以免费使用此程序，但是请您完整保留此说明，以维护知识产权★★★★★
+            
+            </summary>
+        </member>
+        <member name="T:GoldPrinter.SewingDirectionFlag">
+            <summary>
+            装订线方位
+            </summary>
+        </member>
+        <member name="F:GoldPrinter.SewingDirectionFlag.Left">
+            <summary>
+            在左边装订
+            </summary>
+        </member>
+        <member name="F:GoldPrinter.SewingDirectionFlag.Top">
+            <summary>
+            在顶端装订
+            </summary>
+        </member>
+        <member name="T:GoldPrinter.Sewing">
+            <summary>
+            装订类，在打印页面时可能在页面的左边或顶端为装订专门另预留一部分。
+            
+            作 者：长江支流(周方勇)
+            Email：flygoldfish@163.com  QQ：150439795
+            网 址：www.webmis.com.cn
+            ★★★★★您可以免费使用此程序，但是请您完整保留此说明，以维护知识产权★★★★★
+            
+            </summary>
+        </member>
+        <member name="M:GoldPrinter.Sewing.Draw(System.Drawing.Graphics)">
+            <summary>
+            在指定的绘图表面画装订线
+            </summary>
+            <param name="g">绘图表面</param>
+            <remarks>
+            作    者：周方勇
+            修改日期：2004-08-07
+            </remarks>
+        </member>
+        <member name="P:GoldPrinter.Sewing.SewingDirection">
+            <summary>
+            获取或设置装订方向
+            </summary>
+        </member>
+        <member name="P:GoldPrinter.Sewing.Margin">
+            <summary>
+            获取或设置装订预留空白
+            </summary>
+        </member>
+        <member name="P:GoldPrinter.Sewing.LineLen">
+            <summary>
+            获取或设置装订线长
+            </summary>
+        </member>
+        <member name="T:GoldPrinter.CellRectangle">
+            <summary>
+            网格单元格矩阵,描述左顶宽高
+            
+            作 者：长江支流(周方勇)
+            Email：flygoldfish@163.com  QQ：150439795
+            网 址：www.webmis.com.cn
+            ★★★★★您可以免费使用此程序，但是请您完整保留此说明，以维护知识产权★★★★★
+            
+            </summary>
+        </member>
+        <member name="P:GoldPrinter.CellRectangle.Left">
+            <summary>
+            单元格起点X坐标
+            </summary>
+        </member>
+        <member name="P:GoldPrinter.CellRectangle.Top">
+            <summary>
+            单元格起点Y坐标
+            </summary>
+        </member>
+        <member name="P:GoldPrinter.CellRectangle.Width">
+            <summary>
+            单元格宽
+            </summary>
+        </member>
+        <member name="P:GoldPrinter.CellRectangle.Height">
+            <summary>
+            单元格高
+            </summary>
+        </member>
+        <member name="T:GoldPrinter.DrawGrid">
+            <summary>
+            绘制网格，核心是二维数组，可以是DataGrid、MsHFlexGrid、DataTable、HtmlTable等二维表现形式的数据源。
+            
+            作 者：长江支流(周方勇)
+            Email：flygoldfish@163.com  QQ：150439795
+            网 址：www.webmis.com.cn
+            ★★★★★您可以免费使用此程序，但是请您完整保留此说明，以维护知识产权★★★★★
+            
+            </summary>
+        </member>
+        <member name="T:GoldPrinter.GoldGrid">
+            <summary>
+            GoldGrid 的摘要说明。
+            
+            作 者：长江支流(周方勇)
+            Email：flygoldfish@163.com  QQ：150439795
+            网 址：www.webmis.com.cn
+            ★★★★★您可以免费使用此程序，但是请您完整保留此说明，以维护知识产权★★★★★
+            
+            </summary>
+        </member>
+        <member name="T:GoldPrinter.GridBase">
+            <summary>
+            二维网格基类。
+            
+            作 者：长江支流(周方勇)
+            Email：flygoldfish@163.com  QQ：150439795
+            网 址：www.webmis.com.cn
+            ★★★★★您可以免费使用此程序，但是请您完整保留此说明，以维护知识产权★★★★★
+            
+            </summary>
+        </member>
+        <member name="T:GoldPrinter.IGrid">
+            <summary>
+            IGrid网格最基本的接口。
+            
+            作 者：长江支流(周方勇)
+            Email：flygoldfish@163.com  QQ：150439795
+            网 址：www.webmis.com.cn
+            ★★★★★您可以免费使用此程序，但是请您完整保留此说明，以维护知识产权★★★★★
+            
+            </summary>
+        </member>
+        <member name="M:GoldPrinter.IGrid.get_TextMatrix(System.Int32,System.Int32)">
+            <summary>
+            获取指定行列单元格文本
+            </summary>
+            <param name="row"></param>
+            <param name="col"></param>
+            <returns></returns>
+        </member>
+        <member name="M:GoldPrinter.IGrid.set_TextMatrix(System.Int32,System.Int32,System.String)">
+            <summary>
+            设置指定单元格文本
+            </summary>
+            <param name="row"></param>
+            <param name="col"></param>
+            <param name="textMatrix"></param>
+            <returns></returns>
+        </member>
+        <member name="M:GoldPrinter.IGrid.get_RowHeight(System.Int32)">
+            <summary>
+            获取指定行的行高
+            </summary>
+            <param name="index"></param>
+            <returns></returns>
+        </member>
+        <member name="M:GoldPrinter.IGrid.set_RowHeight(System.Int32,System.Int32)">
+            <summary>
+            设置指定行的行高
+            </summary>
+            <param name="index"></param>
+            <param name="rowHeight"></param>
+        </member>
+        <member name="M:GoldPrinter.IGrid.get_ColWidth(System.Int32)">
+            <summary>
+            获取指定列的列宽
+            </summary>
+            <param name="index"></param>
+            <returns></returns>
+        </member>
+        <member name="M:GoldPrinter.IGrid.set_ColWidth(System.Int32,System.Int32)">
+            <summary>
+            设置指定列的列宽
+            </summary>
+            <param name="index"></param>
+            <param name="colWidth"></param>
+            <returns></returns>
+        </member>
+        <member name="M:GoldPrinter.IGrid.get_ColAlignment(System.Int32)">
+            <summary>
+            设置水平列对齐方式
+            </summary>
+            <param name="index"></param>
+            <returns></returns>
+        </member>
+        <member name="M:GoldPrinter.IGrid.set_ColAlignment(System.Int32,GoldPrinter.AlignFlag)">
+            <summary>
+            获取水平列对齐方式
+            </summary>
+            <param name="index"></param>
+            <param name="colAlignment"></param>
+        </member>
+        <member name="P:GoldPrinter.IGrid.Location">
+            <summary>
+            网格起点坐标
+            </summary>
+        </member>
+        <member name="P:GoldPrinter.IGrid.Width">
+            <summary>
+            网格宽
+            </summary>
+        </member>
+        <member name="P:GoldPrinter.IGrid.Height">
+            <summary>
+            网格高
+            </summary>
+        </member>
+        <member name="P:GoldPrinter.IGrid.Font">
+            <summary>
+            网格文本字体
+            </summary>
+        </member>
+        <member name="P:GoldPrinter.IGrid.AlignMent">
+            <summary>
+            网格整体对齐方式
+            </summary>
+        </member>
+        <member name="P:GoldPrinter.IGrid.Line">
+            <summary>
+            网格线类型
+            </summary>
+        </member>
+        <member name="P:GoldPrinter.IGrid.Merge">
+            <summary>
+            单元格合并方式
+            </summary>
+        </member>
+        <member name="P:GoldPrinter.IGrid.Border">
+            <summary>
+            网格边框类型
+            </summary>
+        </member>
+        <member name="P:GoldPrinter.IGrid.Rows">
+            <summary>
+            行数
+            </summary>
+        </member>
+        <member name="P:GoldPrinter.IGrid.Cols">
+            <summary>
+            列数
+            </summary>
+        </member>
+        <member name="P:GoldPrinter.IGrid.FixedRows">
+            <summary>
+            固定行数
+            </summary>
+        </member>
+        <member name="P:GoldPrinter.IGrid.FixedCols">
+            <summary>
+            固定列数
+            </summary>
+        </member>
+        <member name="P:GoldPrinter.IGrid.PreferredRowHeight">
+            <summary>
+            获取或设置首选行高
+            </summary>
+        </member>
+        <member name="P:GoldPrinter.IGrid.PreferredColWidth">
+            <summary>
+            获取或设置默认的列宽
+            </summary>
+        </member>
+        <member name="P:GoldPrinter.IGrid.RowsHeight">
+            <summary>
+            获取或设置行高数组
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:GoldPrinter.IGrid.ColsWidth">
+            <summary>
+            返回列宽数组
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:GoldPrinter.IGrid.ColsAlignment">
+            <summary>
+            返回列对齐数组
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:GoldPrinter.IGrid.Text">
+            <summary>
+            获取或设置当前单元格文本
+            </summary>		
+        </member>
+        <member name="P:GoldPrinter.IGrid.GridText">
+            <summary>
+            获取或设置二维网格的文本
+            </summary>
+        </member>
+        <member name="P:GoldPrinter.IGrid.Row">
+            <summary>
+            当前行
+            </summary>
+        </member>
+        <member name="P:GoldPrinter.IGrid.Col">
+            <summary>
+            当前列
+            </summary>
+        </member>
+        <member name="P:GoldPrinter.IGrid.RowSel">
+            <summary>
+            选择行
+            </summary>
+        </member>
+        <member name="P:GoldPrinter.IGrid.ColSel">
+            <summary>
+            选择列
+            </summary>
+        </member>
+        <member name="M:GoldPrinter.GridBase.get_RowHeight(System.Int32)">
+            <summary>
+            获取指定行的行高
+            </summary>
+            <param name="index"></param>
+            <returns></returns>
+        </member>
+        <member name="M:GoldPrinter.GridBase.set_RowHeight(System.Int32,System.Int32)">
+            <summary>
+            设置指定行的行高
+            </summary>
+            <param name="index"></param>
+            <param name="rowHeight"></param>
+        </member>
+        <member name="M:GoldPrinter.GridBase.get_ColWidth(System.Int32)">
+            <summary>
+            获取指定列的列宽
+            </summary>
+            <param name="index"></param>
+            <returns></returns>
+        </member>
+        <member name="M:GoldPrinter.GridBase.set_ColWidth(System.Int32,System.Int32)">
+            <summary>
+            设置指定列的列宽
+            </summary>
+            <param name="index"></param>
+            <param name="colWidth"></param>
+            <returns></returns>
+        </member>
+        <member name="M:GoldPrinter.GridBase.get_ColAlignment(System.Int32)">
+            <summary>
+            设置水平列对齐方式
+            </summary>
+            <param name="index"></param>
+            <returns></returns>
+        </member>
+        <member name="M:GoldPrinter.GridBase.set_ColAlignment(System.Int32,GoldPrinter.AlignFlag)">
+            <summary>
+            获取水平列对齐方式
+            </summary>
+            <param name="index"></param>
+            <param name="colAlignment"></param>
+        </member>
+        <member name="M:GoldPrinter.GridBase.get_TextMatrix(System.Int32,System.Int32)">
+            <summary>
+            获取指定行列单元格文本
+            </summary>
+            <param name="row"></param>
+            <param name="col"></param>
+            <returns></returns>
+        </member>
+        <member name="M:GoldPrinter.GridBase.set_TextMatrix(System.Int32,System.Int32,System.String)">
+            <summary>
+            设置指定单元格文本
+            </summary>
+            <param name="row"></param>
+            <param name="col"></param>
+            <param name="textMatrix"></param>
+            <returns></returns>
+        </member>
+        <member name="M:GoldPrinter.GridBase.InitRowHeight">
+            <summary>
+            初始设置行高
+            </summary>
+        </member>
+        <member name="M:GoldPrinter.GridBase.InitColWidth">
+            <summary>
+            初始设置列宽
+            </summary>
+        </member>
+        <member name="M:GoldPrinter.GridBase.InitColAlignMent">
+            <summary>
+            初始设置列对齐
+            </summary>
+        </member>
+        <member name="M:GoldPrinter.GridBase.ResetRowHeight">
+            <summary>
+            改变行列数时，重新设置行高
+            </summary>
+        </member>
+        <member name="M:GoldPrinter.GridBase.ResetColWidth">
+            <summary>
+            改变行列数时，重新设置列宽
+            </summary>
+        </member>
+        <member name="M:GoldPrinter.GridBase.Dispose">
+            <summary>
+            释放由此对象所用的所有资源
+            </summary>
+        </member>
+        <member name="M:GoldPrinter.GridBase.Clone">
+            <summary>
+            创建当前对象的浅表副本
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:GoldPrinter.GridBase.Initialize(System.Int32,System.Int32)">
+            <summary>
+            初始对象的行列数，注意带参构造函数自动调用此方法
+            </summary>
+            <param name="rows"></param>
+            <param name="cols"></param>
+        </member>
+        <member name="M:GoldPrinter.GridBase.GetAllColsWidthSum">
+            <summary>
+            返回对象所有列宽和
+            </summary>
+        </member>
+        <member name="M:GoldPrinter.GridBase.GetAllRowsHeightSum">
+            <summary>
+            返回对象所有行高和
+            </summary>
+        </member>
+        <member name="M:GoldPrinter.GridBase.GetAverageColsWidth">
+            <summary>
+            返回网格的平均列宽数组
+            </summary>
+            <param name="IsAverageWidth">是否平均网格的宽为列宽</param>
+            <returns></returns>
+        </member>
+        <member name="M:GoldPrinter.GridBase.ReDimArrString(System.String[0:,0:]@,System.Int32,System.Int32)">
+            <summary>
+            用指定的行列重定义二维字符数组，数组将保留交集范围内的原有数据，扩充的用空串""填充
+            </summary>
+            <param name="arrStr">原二维字符数组</param>
+            <param name="rows">新行数</param>
+            <param name="cols">新列数</param>
+        </member>
+        <member name="P:GoldPrinter.GridBase.Location">
+            <summary>
+            网格起点坐标
+            </summary>
+        </member>
+        <member name="P:GoldPrinter.GridBase.Width">
+            <summary>
+            获取对象的宽
+            </summary>
+        </member>
+        <member name="P:GoldPrinter.GridBase.Height">
+            <summary>
+            获取对象的高
+            </summary>
+        </member>
+        <member name="P:GoldPrinter.GridBase.Font">
+            <summary>
+            网格文本字体，默认字体名为宋体大小为10。改变字体，只有在重绘时才起作用
+            </summary>
+        </member>
+        <member name="P:GoldPrinter.GridBase.AlignMent">
+            <summary>
+            网格整体对齐方式
+            </summary>
+        </member>
+        <member name="P:GoldPrinter.GridBase.Line">
+            <summary>
+            网格线类型
+            </summary>
+        </member>
+        <member name="P:GoldPrinter.GridBase.Merge">
+            <summary>
+            单元格合并方式
+            </summary>
+        </member>
+        <member name="P:GoldPrinter.GridBase.Border">
+            <summary>
+            网格边框类型
+            </summary>
+        </member>
+        <member name="P:GoldPrinter.GridBase.Rows">
+            <summary>
+            行数，注意改变行数会，会影响网格文本，并且会重设置行高
+            </summary>
+        </member>
+        <member name="P:GoldPrinter.GridBase.Cols">
+            <summary>
+            列数，注意改变列数，会影响网格文本
+            </summary>
+        </member>
+        <member name="P:GoldPrinter.GridBase.FixedRows">
+            <summary>
+            固定行数，打印时也重复打印，滚动滚动条时固定。最小为0，最大为行数。
+            </summary>
+        </member>
+        <member name="P:GoldPrinter.GridBase.FixedCols">
+            <summary>
+            固定列数，打印时也重复打印，滚动滚动条时固定。最小为0，最大为列数。
+            </summary>
+        </member>
+        <member name="P:GoldPrinter.GridBase.Row">
+            <summary>
+            当前行，或当前选定范围起始行
+            </summary>
+        </member>
+        <member name="P:GoldPrinter.GridBase.Col">
+            <summary>
+            当前列，或当前选定范围起始列
+            </summary>
+        </member>
+        <member name="P:GoldPrinter.GridBase.RowSel">
+            <summary>
+            选定行，即当前选定范围结束行
+            </summary>
+        </member>
+        <member name="P:GoldPrinter.GridBase.ColSel">
+            <summary>
+            选定列，即当前选定范围结束列
+            </summary>
+        </member>
+        <member name="P:GoldPrinter.GridBase.PreferredRowHeight">
+            <summary>
+            获取或设置首选行高，以像素为单位
+            </summary>
+        </member>
+        <member name="P:GoldPrinter.GridBase.PreferredColWidth">
+            <summary>
+            获取或设置默认的列宽，以像素为单位
+            </summary>
+        </member>
+        <member name="P:GoldPrinter.GridBase.RowsHeight">
+            <summary>
+            获取或设置行高数组，设置值数组长度少于行数时只赋数组指定部分，其余的行高不变。
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:GoldPrinter.GridBase.ColsWidth">
+            <summary>
+            获取或设置列宽数组，设置值数组长度少于列数时只赋数组指定部分，其余的列宽不变。
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:GoldPrinter.GridBase.ColsAlignment">
+            <summary>
+            返回列对齐数组
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:GoldPrinter.GridBase.Text">
+            <summary>
+            获取或设置当前单元格文本
+            </summary>		
+        </member>
+        <member name="M:GoldPrinter.GoldGrid.SetText(System.Int32,System.Int32,System.String)">
+            <summary>
+            设置指定单元格文本
+            </summary>
+            <param name="row"></param>
+            <param name="col"></param>
+            <param name="text"></param>
+        </member>
+        <member name="M:GoldPrinter.GoldGrid.GetText(System.Int32,System.Int32)">
+            <summary>
+            获取指定单元格文本
+            </summary>
+            <param name="row"></param>
+            <param name="col"></param>
+            <returns></returns>
+        </member>
+        <member name="M:GoldPrinter.GoldGrid.GetMergeCell">
+            <summary>
+            查找当前单元格左顶宽高
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:GoldPrinter.GoldGrid.InitColsAlignString">
+            <summary>
+            初始列对齐字符串，在设置AlignMent、Cols时调用
+            </summary>
+        </member>
+        <member name="M:GoldPrinter.GoldGrid.GetColsAlign(System.String)">
+            <summary>
+            返回由Left，Center，Right第一个字母组成的串的对齐方式的数组
+            </summary>
+            <param name="Alignment">由Left，Center，Right第一个字母组成的串</param>
+            <returns></returns>
+        </member>
+        <member name="M:GoldPrinter.GoldGrid.GetMergeCell(System.Drawing.Point,System.String[0:,0:],System.Int32,System.Int32[],System.Int32,System.Int32)">
+            <summary>
+            任意合并方式下返回指定单元格左顶宽高
+            </summary>
+            <param name="GridLocation">网格起点坐标</param>
+            <param name="arrStrGrid">二维网格</param>
+            <param name="rowHeight">行高</param>
+            <param name="ArrColWidth">列宽数组</param>
+            <param name="rowSel">指定单元格行</param>
+            <param name="colSel">指定单元格列</param>
+            <returns></returns>
+        </member>
+        <member name="P:GoldPrinter.GoldGrid.ColsAlignString">
+            <summary>
+            获取或设置列对齐列表对象，由Left，Center，Right第一个字母组成的串的对齐方式的串
+            </summary>
+        </member>
+        <member name="P:GoldPrinter.GoldGrid.DataSource">
+            <summary>
+            或取或设置数据源，可以是任意的二维数组型的，如二维数组、网格等
+            </summary>
+        </member>
+        <member name="M:GoldPrinter.DrawGrid.DrawGridLine">
+            <summary>
+            绘制网格线，不包括边界线
+            </summary>
+        </member>
+        <member name="M:GoldPrinter.DrawGrid.DrawGridText">
+            <summary>
+            绘制网格文本
+            </summary>
+        </member>
+        <member name="M:GoldPrinter.DrawGrid.DrawGridBorder">
+            <summary>
+            绘制边框
+            </summary>
+        </member>
+        <member name="M:GoldPrinter.DrawGrid.Draw">
+            <summary>
+            绘制网格络及文本和边框
+            </summary>
+        </member>
+        <member name="M:GoldPrinter.DrawGrid.DrawGridLine(System.Drawing.Graphics,System.Drawing.Rectangle,System.Drawing.Pen,System.Int32,System.Int32,System.Int32,System.Int32[],GoldPrinter.GridLineFlag,GoldPrinter.GridBorderFlag,System.Drawing.PointF)">
+            <summary>
+            画网格线，标准备的横竖线交叉的线
+            </summary>
+            <param name="g">绘图表面</param>
+            <param name="p_rec">绘图区</param>
+            <param name="p_pen">绘图线的笔，可以定义颜色与线宽</param>
+            <param name="p_rows">行数</param>
+            <param name="p_cols">列数</param>
+            <param name="p_rowHeight">行高</param>
+            <param name="p_arrColsWidth">列宽</param>
+            <param name="p_gridLineFlag">网格线类型</param>
+            <param name="p_gridBorderFlag">边框类型</param>
+            <param name="p_scaleXY">水平与垂直方向缩放量</param>
+            <remarks>
+            作    者：周方勇
+            修改日期：2004-08-07
+            </remarks>
+        </member>
+        <member name="M:GoldPrinter.DrawGrid.DrawGridLine(System.Drawing.Graphics,System.Drawing.Rectangle,System.Drawing.Pen,System.String[0:,0:],System.Int32,System.Int32[],GoldPrinter.GridLineFlag,GoldPrinter.GridBorderFlag,System.Drawing.PointF)">
+            <summary>
+            画网格线，标准备的横竖线交叉的线
+            </summary>
+            <param name="g">绘图表面</param>
+            <param name="p_rec">绘图区</param>
+            <param name="p_pen">绘图线的笔，可以定义颜色与线宽</param>
+            <param name="arrStrGrid">二维数组，对应了网格行、列数</param>
+            <param name="p_rowHeight">行高</param>
+            <param name="p_arrColsWidth">列宽</param>
+            <param name="p_gridLineFlag">网格线类型</param>
+            <param name="p_gridBorderFlag">边框类型</param>
+            <param name="p_scaleXY">水平与垂直方向缩放量</param>
+            <remarks>
+            作    者：周方勇
+            修改日期：2004-08-07
+            </remarks>
+        </member>
+        <member name="M:GoldPrinter.DrawGrid.DrawGridMergeLine(System.Drawing.Graphics,System.Drawing.Rectangle,System.Drawing.Pen,System.String[0:,0:],System.Int32,System.Int32[],GoldPrinter.GridLineFlag,GoldPrinter.GridBorderFlag,System.Drawing.PointF,GoldPrinter.GridMergeFlag)">
+            <summary>
+            画网格线，根据合并方式判断相邻单元格内容一格一格的画
+            </summary>
+            <param name="g">绘图表面</param>
+            <param name="p_rec">绘图区</param>
+            <param name="p_pen">绘图线的笔，可以定义颜色与线宽</param>
+            <param name="arrStrGrid">二维数组</param>
+            <param name="p_rowHeight">行高</param>
+            <param name="p_arrColsWidth">列宽</param>
+            <param name="p_gridLineFlag">网格线类型</param>
+            <param name="p_gridBorderFlag">边框类型</param>
+            <param name="p_scaleXY">水平与垂直方向缩放量</param>
+            <param name="gridMergeFlag">网格单元格合并方式</param>
+            <remarks>
+            作    者：周方勇
+            修改日期：2004-08-07
+            </remarks>
+        </member>
+        <member name="M:GoldPrinter.DrawGrid.DrawGridText(System.Drawing.Graphics,System.Drawing.Rectangle,System.Drawing.Brush,System.String[0:,0:],System.Int32,System.Int32[],System.String,System.Drawing.Font,System.Drawing.PointF)">
+            <summary>
+            绘制网格文本，标准的行与列单元格，无合并
+            </summary>
+            <param name="g">绘图表面</param>
+            <param name="p_rec">绘图区</param>
+            <param name="p_brush">绘图文本的画刷，可以定义颜色</param>
+            <param name="arrStrGrid">二维字符数组（网格）</param>
+            <param name="p_rowHeight">固定行高</param>
+            <param name="p_arrColsWidth">列宽数组，为null时则平均列宽</param>
+            <param name="alignment">由Left，Center，Right对齐方式第一个字母组成的串</param>
+            <param name="p_scaleXY">指定X与Y向缩放比例值</param>
+            <remarks>
+            作    者：周方勇
+            修改日期：2004-08-07
+            </remarks>
+        </member>
+        <member name="M:GoldPrinter.DrawGrid.DrawGridMergeText(System.Drawing.Graphics,System.Drawing.Rectangle,System.Drawing.Brush,System.String[0:,0:],System.Int32,System.Int32[],System.String,System.Drawing.Font,System.Drawing.PointF,GoldPrinter.GridMergeFlag)">
+            <summary>
+            绘制网格文本，标准的行与列单元格，无合并
+            </summary>
+            <param name="g">绘图表面</param>
+            <param name="p_rec">绘图区</param>
+            <param name="p_brush">绘图文本的画刷，可以定义颜色</param>
+            <param name="arrStrGrid">二维字符数组（网格）</param>
+            <param name="p_rowHeight">固定行高</param>
+            <param name="p_arrColsWidth">列宽数组，为null时则平均列宽</param>
+            <param name="alignment">由Left，Center，Right对齐方式第一个字母组成的串</param>
+            <param name="p_scaleXY">指定X与Y向缩放比例值</param>
+            <remarks>
+            作    者：周方勇
+            修改日期：2004-08-07
+            </remarks>
+        </member>
+        <member name="M:GoldPrinter.DrawGrid.DrawGridBorder(System.Drawing.Graphics,System.Drawing.Rectangle,System.Drawing.Pen,GoldPrinter.GridBorderFlag)">
+            <summary>
+            绘制网格边框
+            </summary>
+            <param name="g"></param>
+            <param name="rec"></param>
+            <param name="p_gridBorderFlag"></param>
+        </member>
+        <member name="M:GoldPrinter.DrawGrid.TransGrid(System.Drawing.Graphics,System.Drawing.Rectangle,System.Drawing.PointF)">
+            <summary>
+            变换网格
+            </summary>
+            <param name="g"></param>
+            <param name="p_rec"></param>
+            <param name="p_scaleXY"></param>
+        </member>
+        <member name="M:GoldPrinter.DrawGrid.DrawGridLine(System.Drawing.Graphics,System.Drawing.Rectangle,System.Drawing.Pen,System.String[0:,0:],System.Int32,System.Int32[],GoldPrinter.GridLineFlag,GoldPrinter.GridBorderFlag,System.Drawing.PointF,GoldPrinter.GridMergeFlag)">
+            <summary>
+            画网格线，根据合并方式判断相邻单元格内容一格一格的画
+            </summary>
+            <param name="g">绘图表面</param>
+            <param name="p_rec">绘图区</param>
+            <param name="p_pen">绘图线的笔，可以定义颜色与线宽</param>
+            <param name="arrStrGrid">二维数组</param>
+            <param name="p_rowHeight">行高</param>
+            <param name="p_arrColsWidth">列宽</param>
+            <param name="p_gridLineFlag">网格线类型</param>
+            <param name="p_gridBorderFlag">边框类型</param>
+            <param name="p_scaleXY">水平与垂直方向缩放量</param>
+            <param name="gridMergeFlag">网格单元格合并方式</param>
+            <remarks>
+            作    者：周方勇
+            修改日期：2004-08-07
+            </remarks>
+        </member>
+        <member name="M:GoldPrinter.DrawGrid.GetMergeCell(System.Drawing.Point,System.String[0:,0:],System.Int32,System.Int32[],System.Int32,System.Int32,GoldPrinter.GridMergeFlag)">
+            <summary>
+            任意合并方式下返回指定单元格左顶宽高
+            </summary>
+            <param name="GridLocation">网格起点坐标</param>
+            <param name="arrStrGrid">二维网格</param>
+            <param name="rowHeight">行高</param>
+            <param name="ArrColWidth">列宽数组</param>
+            <param name="rowSel">指定单元格行</param>
+            <param name="colSel">指定单元格列</param>
+            <returns></returns>
+        </member>
+        <member name="P:GoldPrinter.DrawGrid.Graphics">
+            <summary>
+            获取或设置绘图表面
+            </summary>
+        </member>
+        <member name="P:GoldPrinter.DrawGrid.Rectangle">
+            <summary>
+            获取或设置绘制区域
+            </summary>
+        </member>
+        <member name="P:GoldPrinter.DrawGrid.Pen">
+            <summary>
+            画笔
+            </summary>
+        </member>
+        <member name="P:GoldPrinter.DrawGrid.Brush">
+            <summary>
+            画刷
+            </summary>
+        </member>
+        <member name="T:GoldPrinter.AlignFlag">
+            <summary>
+            对齐方式
+            </summary>
+        </member>
+        <member name="F:GoldPrinter.AlignFlag.Left">
+            <summary>
+            左对齐
+            </summary>
+        </member>
+        <member name="F:GoldPrinter.AlignFlag.Center">
+            <summary>
+            居中对齐
+            </summary>
+        </member>
+        <member name="F:GoldPrinter.AlignFlag.Right">
+            <summary>
+            右对齐
+            </summary>
+        </member>
+        <member name="T:GoldPrinter.GridLineFlag">
+            <summary>
+            网格线，不包括边界
+            </summary>
+        </member>
+        <member name="F:GoldPrinter.GridLineFlag.None">
+            <summary>
+            无
+            </summary>
+        </member>
+        <member name="F:GoldPrinter.GridLineFlag.Horizontal">
+            <summary>
+            仅横线
+            </summary>
+        </member>
+        <member name="F:GoldPrinter.GridLineFlag.Vertical">
+            <summary>
+            仅竖线
+            </summary>
+        </member>
+        <member name="F:GoldPrinter.GridLineFlag.Both">
+            <summary>
+            横竖线两者都有
+            </summary>
+        </member>
+        <member name="T:GoldPrinter.GridMergeFlag">
+            <summary>
+            合并方式
+            </summary>
+        </member>
+        <member name="F:GoldPrinter.GridMergeFlag.None">
+            <summary>
+            无
+            </summary>
+        </member>
+        <member name="F:GoldPrinter.GridMergeFlag.Row">
+            <summary>
+            在行上如果相邻列单元格内容相同，进行列合并
+            </summary>
+        </member>
+        <member name="F:GoldPrinter.GridMergeFlag.Col">
+            <summary>
+            在列上如果相邻行单元格内容相等，进行行合并
+            </summary>
+        </member>
+        <member name="F:GoldPrinter.GridMergeFlag.ColDependOnBeforeGroup">
+            <summary>
+            在列上如果相邻行单元格内容相等，进行行合并，但是条件是前一列的组是同一组
+            </summary>
+        </member>
+        <member name="F:GoldPrinter.GridMergeFlag.Both">
+            <summary>
+            在指定的行列上进行合并
+            </summary>
+        </member>
+        <member name="F:GoldPrinter.GridMergeFlag.Any">
+            <summary>
+            任意，只要相同就合并
+            </summary>
+        </member>
+        <member name="T:GoldPrinter.GridBorderFlag">
+            <summary>
+            网格边框
+            </summary>
+        </member>
+        <member name="F:GoldPrinter.GridBorderFlag.None">
+            <summary>
+            无边框
+            </summary>
+        </member>
+        <member name="F:GoldPrinter.GridBorderFlag.Single">
+            <summary>
+            单线边框
+            </summary>
+        </member>
+        <member name="F:GoldPrinter.GridBorderFlag.SingleBold">
+            <summary>
+            单线边框加粗
+            </summary>
+        </member>
+        <member name="F:GoldPrinter.GridBorderFlag.Double">
+            <summary>
+            双边框
+            </summary>
+        </member>
+        <member name="F:GoldPrinter.GridBorderFlag.DoubleBold">
+            <summary>
+            双边框加粗
+            </summary>
+        </member>
+        <member name="T:GoldPrinter.HAlignFlag">
+            <summary>
+            水平对齐方式
+            </summary>
+        </member>
+        <member name="F:GoldPrinter.HAlignFlag.Left">
+            <summary>
+            左对齐
+            </summary>
+        </member>
+        <member name="F:GoldPrinter.HAlignFlag.Center">
+            <summary>
+            居中对齐
+            </summary>
+        </member>
+        <member name="F:GoldPrinter.HAlignFlag.Right">
+            <summary>
+            右对齐
+            </summary>
+        </member>
+        <member name="T:GoldPrinter.VAlignFlag">
+            <summary>
+            垂直对齐方式
+            </summary>
+        </member>
+        <member name="F:GoldPrinter.VAlignFlag.Top">
+            <summary>
+            顶对齐
+            </summary>
+        </member>
+        <member name="F:GoldPrinter.VAlignFlag.Middle">
+            <summary>
+            垂直居中对齐
+            </summary>
+        </member>
+        <member name="F:GoldPrinter.VAlignFlag.Bottom">
+            <summary>
+            底端
+            </summary>
+        </member>
+        <member name="T:GoldPrinter.PrinterTabStops">
+            <summary>
+            绘制表符分隔的字符串，以|分隔列，以\n换行，列对齐均为居左。合适于列少每列字符少的几行几列的打印。
+            
+            作 者：长江支流(周方勇)
+            Email：flygoldfish@163.com  QQ：150439795
+            网 址：www.webmis.com.cn
+            ★★★★★您可以免费使用此程序，但是请您完整保留此说明，以维护知识产权★★★★★
+            
+            </summary>
+        </member>
+        <member name="M:GoldPrinter.PrinterTabStops.ConvertText(System.String)">
+            <summary>
+            将文本以|分隔的文本转换为制表文本
+            </summary>
+            <param name="text"></param>
+            <returns></returns>
+        </member>
+        <member name="P:GoldPrinter.PrinterTabStops.Cols">
+            <summary>
+            或取或设置最大列数
+            </summary>
+        </member>
+        <member name="P:GoldPrinter.PrinterTabStops.Text">
+            <summary>
+            或取或设置打印文本
+            </summary>
+        </member>
+        <member name="T:GoldPrinter.Body">
+            <summary>
+            Body，数据表格主题。
+            
+            作 者：长江支流(周方勇)
+            Email：flygoldfish@163.com  QQ：150439795
+            网 址：www.webmis.com.cn
+            ★★★★★您可以免费使用此程序，但是请您完整保留此说明，以维护知识产权★★★★★
+            
+            </summary>
+        </member>
+        <member name="T:GoldPrinter.Outer">
+            <summary>
+            Outer，网格体之外的对象，通常用于表头表底做表体的附加信息。
+            
+            作 者：长江支流(周方勇)
+            Email：flygoldfish@163.com  QQ：150439795
+            网 址：www.webmis.com.cn
+            ★★★★★您可以免费使用此程序，但是请您完整保留此说明，以维护知识产权★★★★★
+            
+            </summary>
+        </member>
+        <member name="M:GoldPrinter.Outer.Initialize(System.Int32,System.Int32)">
+            <summary>
+            初始行列数
+            </summary>
+            <param name="rows">初始对象的行数</param>
+            <param name="cols">初始对象的列数</param>
+        </member>
+        <member name="M:GoldPrinter.Outer.SetText(System.Int32,System.Int32,System.String)">
+            <summary>
+            为对象指定单元设置文本值
+            </summary>
+            <param name="row">单元行</param>
+            <param name="col">单元列</param>
+            <param name="text">文本值</param>
+        </member>
+        <member name="M:GoldPrinter.Outer.SetText(System.Char,System.Char,System.String)">
+            <summary>
+            用指定的行列分隔分隔的一串字符串，些操作默认已执行初始行列数
+            </summary>
+            <param name="text"></param>
+            <param name="colSplit"></param>
+        </member>
+        <member name="M:GoldPrinter.Outer.GetText(System.Int32,System.Int32)">
+            <summary>
+            获取对象指定单元文本值
+            </summary>
+            <param name="row">单元行</param>
+            <param name="col">单元列</param>
+            <returns></returns>
+        </member>
+        <member name="M:GoldPrinter.Outer.Draw">
+            <summary>
+            在绘图表面绘制对象绘制文本
+            </summary>
+        </member>
+        <member name="P:GoldPrinter.Outer.IsAverageColsWidth">
+            <summary>
+            是否平均分配列宽
+            </summary>
+        </member>
+        <member name="P:GoldPrinter.Outer.CanDraw">
+            <summary>
+            获取是否能执行绘制操作，只有初始了对象的行列数才可以执行Draw()操作
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="P:GoldPrinter.Outer.Rows">
+            <summary>
+            获取对象的行数
+            </summary>
+        </member>
+        <member name="P:GoldPrinter.Outer.Cols">
+            <summary>
+            获取对象的列数
+            </summary>
+        </member>
+        <member name="P:GoldPrinter.Outer.ColsWidth">
+            <summary>
+            获取或设置对象的列宽
+            </summary>
+        </member>
+        <member name="P:GoldPrinter.Outer.Height">
+            <summary>
+            获取对象的高
+            </summary>
+        </member>
+        <member name="T:GoldPrinter.Bottom">
+            <summary>
+            Bottom，提供一个一行三列的对象，第一列居左，第三列居右，中间一旬居中。默认每页重复打印。
+            
+            作 者：长江支流(周方勇)
+            Email：flygoldfish@163.com  QQ：150439795
+            网 址：www.webmis.com.cn
+            ★★★★★您可以免费使用此程序，但是请您完整保留此说明，以维护知识产权★★★★★
+            
+            </summary>
+        </member>
+        <member name="T:GoldPrinter.Top">
+            <summary>
+            Top，提供一个一行三列的对象，第一列居左，第三列居右，中间一旬居中。默认每页重复打印。
+            
+            作 者：长江支流(周方勇)
+            Email：flygoldfish@163.com  QQ：150439795
+            网 址：www.webmis.com.cn
+            ★★★★★您可以免费使用此程序，但是请您完整保留此说明，以维护知识产权★★★★★
+            
+            </summary>
+        </member>
+        <member name="M:GoldPrinter.Top.SetText(System.String)">
+            <summary>
+            用分隔符(默认'|')分隔的串设置文本值
+            </summary>
+            <param name="text"></param>
+        </member>
+        <member name="M:GoldPrinter.Top.SetText(System.String,System.Char)">
+            <summary>
+            用指定分隔符分隔的串设置文本值
+            </summary>
+            <param name="text"></param>
+            <param name="split"></param>
+        </member>
+        <member name="M:GoldPrinter.Top.Draw">
+            <summary>
+            在绘图表面绘制对象绘制文本
+            </summary>
+        </member>
+        <member name="P:GoldPrinter.Top.DataSource">
+            <summary>
+            获取或设置数据源，可以是以'|'分隔的字符串或一维数组
+            </summary>
+        </member>
+        <member name="P:GoldPrinter.Top.Height">
+            <summary>
+            获取对象的高
+            </summary>
+        </member>
+        <member name="T:GoldPrinter.Caption">
+            <summary>
+            子标题。
+            
+            作 者：长江支流(周方勇)
+            Email：flygoldfish@163.com  QQ：150439795
+            网 址：www.webmis.com.cn
+            ★★★★★您可以免费使用此程序，但是请您完整保留此说明，以维护知识产权★★★★★
+            
+            </summary>
+        </member>
+        <member name="M:GoldPrinter.Caption.#ctor">
+            <summary>
+             默认构造函数
+            </summary>
+        </member>
+        <member name="M:GoldPrinter.Caption.#ctor(System.String)">
+            <summary>
+            子标题构造函数
+            </summary>
+            <param name="text"></param>
+        </member>
+        <member name="P:GoldPrinter.Caption.MaxRows">
+            <summary>
+            限制行数，小于0为不限制
+            </summary>
+        </member>
+        <member name="T:GoldPrinter.Footer">
+            <summary>
+            Footer，紧挨在网格体下的对象，行列数不受限制。
+            
+            作 者：长江支流(周方勇)
+            Email：flygoldfish@163.com  QQ：150439795
+            网 址：www.webmis.com.cn
+            ★★★★★您可以免费使用此程序，但是请您完整保留此说明，以维护知识产权★★★★★
+            
+            </summary>
+        </member>
+        <member name="T:GoldPrinter.Header">
+            <summary>
+            Header，紧挨在网格体上的对象，限制在10行内，列数不限。
+            
+            作 者：长江支流(周方勇)
+            Email：flygoldfish@163.com  QQ：150439795
+            网 址：www.webmis.com.cn
+            ★★★★★您可以免费使用此程序，但是请您完整保留此说明，以维护知识产权★★★★★
+            
+            </summary>
+        </member>
+        <member name="T:GoldPrinter.MultiHeader">
+            <summary>
+            中国特色的多层表头。
+            
+            作 者：长江支流(周方勇)
+            Email：flygoldfish@163.com  QQ：150439795
+            网 址：www.webmis.com.cn
+            ★★★★★您可以免费使用此程序，但是请您完整保留此说明，以维护知识产权★★★★★
+            
+            </summary>
+        </member>
+        <member name="M:GoldPrinter.MultiHeader.DrawDiagonalLine(System.Single)">
+            <summary>
+            画对角线，仅限于第一列
+            </summary>
+        </member>
+        <member name="P:GoldPrinter.MultiHeader.IsDrawDiagonalLine">
+            <summary>
+            是否打印第一列的对角线，要指定行数
+            </summary>
+        </member>
+        <member name="P:GoldPrinter.MultiHeader.DiagonalLineRows">
+            <summary>
+            对角线起点为0行0列，指定行数为终点。行数可以是小数如1.5
+            </summary>
+        </member>
+        <member name="T:GoldPrinter.Title">
+            <summary>
+            主标题，默认最多只打印两行文字，可用MaxRows调整，可以用\n（VB为VbCrlf）硬换行。在最后一行文字下画强调下划线。
+            
+            作 者：长江支流(周方勇)
+            Email：flygoldfish@163.com  QQ：150439795
+            网 址：www.webmis.com.cn
+            ★★★★★您可以免费使用此程序，但是请您完整保留此说明，以维护知识产权★★★★★
+            
+            </summary>
+        </member>
+        <member name="M:GoldPrinter.Title.#ctor(System.String)">
+            <summary>
+            主标题构造函数
+            </summary>
+            <param name="text">默认最多只打印两行文字，可以用\n硬换行。在最后一行文字下画强调下划线</param>
+        </member>
+        <member name="T:GoldPrinter.DataGridViewListViewHelper">
+            <summary>
+            提供将ListView、VS2005DataGridView转换成二维数组的方法并提取列宽，供金质打印通打印。
+            </summary>
+        </member>
+        <member name="M:GoldPrinter.DataGridViewListViewHelper.GetColsWidth(System.Windows.Forms.ListView)">
+            <summary>
+            获取ListView控件的列宽。
+            </summary>
+            <param name="listView">二维数据视图</param>
+            <returns>列宽数组。</returns>
+        </member>
+        <member name="M:GoldPrinter.DataGridViewListViewHelper.ToStringArray(System.Windows.Forms.ListView,System.Boolean)">
+            <summary>
+            将ListView的数据导出到二维数组。
+            </summary>
+            <param name="listView">二维数据视图</param>
+            <param name="includeColumnText">是否要把列标题文本也导到数组中。</param>
+            <remarks>
+             <作者>长江支流</作者>
+             <日期>2005-08-21</日期>
+             <修改></修改>
+            </remarks>
+            <returns>二维数组。</returns>
+        </member>
+        <member name="T:GoldPrinter.ChineseNum">
+            <summary>
+            本类实现阿拉伯数字到大写中文的转换
+            该类没有对非法数字进行判别
+            </summary>
+        </member>
+        <member name="T:GoldPrinter.MisGoldPrinter">
+            <summary>
+            本程序为通用打印程序，单据、会计凭证、发票清单、报表、任意复杂表格、合并表格如工矿企业合同都可以由系统提供的几个默。
+            认打印对象组合打印。
+            DataGrid、DataTable、MSHFlexGrid等二维形式全部可以打印。
+            部分对象如PrinterMargins、Sewing、GridLineFlag、GridMergeFlag等提供图例，以促进理解。
+            后期版本将提供XML描述、SQL数据源的打印，并用管理器管理任意多个网格、文本对象、图象等，用户可以随意定义。
+            
+            作 者：长江支流(周方勇)
+            Email：flygoldfish@163.com  QQ：150439795
+            网 址：www.webmis.com.cn
+            ★★★★★您可以免费使用此程序，但是请您完整保留此说明，以维护知识产权★★★★★
+            
+            </summary>
+        </member>
+        <member name="M:GoldPrinter.MisGoldPrinter.PageSetup">
+            <summary>
+            页面设置对话框。
+            </summary>
+        </member>
+        <member name="M:GoldPrinter.MisGoldPrinter.Print">
+            <summary>
+            打印设置对话框。
+            </summary>
+        </member>
+        <member name="M:GoldPrinter.MisGoldPrinter.Preview">
+            <summary>
+            打印预览对话框。
+            </summary>
+        </member>
+        <member name="M:GoldPrinter.MisGoldPrinter.OutObject(GoldPrinter.Printer)">
+            对象打印接口
+        </member>
+        <member name="M:GoldPrinter.MisGoldPrinter.Draw(System.Drawing.Graphics)">
+            <summary>
+            绘制过程
+            </summary>
+            <param name="g"></param>
+            <returns>一页没绘制完返回false</returns>
+        </member>
+        <member name="M:GoldPrinter.MisGoldPrinter.DrawPrinterMargins(GoldPrinter.Printer)">
+            <summary>
+            画打印区域
+            </summary>
+        </member>
+        <member name="M:GoldPrinter.MisGoldPrinter.DrawSewing(GoldPrinter.Printer)">
+            <summary>
+            画装订线
+            </summary>
+        </member>
+        <member name="M:GoldPrinter.MisGoldPrinter.DrawBorder(System.Drawing.Graphics,GoldPrinter.MultiHeader,GoldPrinter.Body)">
+            <summary>
+            画边框
+            </summary>
+        </member>
+        <member name="M:GoldPrinter.MisGoldPrinter.AddSewingNonePrintArea">
+            <summary>
+            加上装订的非打印区域，打印对象整体移动
+            </summary>
+        </member>
+        <member name="P:GoldPrinter.MisGoldPrinter.Sewing">
+            <summary>
+            装订对象，对象的线长小于0则自动设置，为null时不起作用。注意是全局的
+            </summary>
+        </member>
+        <member name="P:GoldPrinter.MisGoldPrinter.RowsPerPage">
+            <summary>
+            每页行数，小于等于0自适应，默认
+            </summary>
+        </member>
+        <member name="P:GoldPrinter.MisGoldPrinter.IsSubTotalPerPage">
+            <summary>
+            是否每页都要显示当前页小计（默认否）
+            </summary>
+        </member>
+        <member name="P:GoldPrinter.MisGoldPrinter.SubTotalColsList">
+            <summary>
+            用分号分隔的要每页小计列
+            </summary>
+        </member>
+        <member name="P:GoldPrinter.MisGoldPrinter.IsSewingLine">
+            <summary>
+            是否打印装订线,对象的线长小于等于0则自动设置
+            </summary>
+        </member>
+        <member name="P:GoldPrinter.MisGoldPrinter.IsPrinterMargins">
+            <summary>
+            是否打印有效区域矩阵
+            </summary>
+        </member>
+        <member name="P:GoldPrinter.MisGoldPrinter.GridBorder">
+            <summary>
+            网格边框
+            </summary>
+        </member>
+        <member name="P:GoldPrinter.MisGoldPrinter.Title">
+            <summary>
+            获取或设置打印主标题，可以是文本，也可以是定义更多特性的Title对象
+            </summary>
+        </member>
+        <member name="P:GoldPrinter.MisGoldPrinter.Caption">
+            <summary>
+            获取或设置打印副标题，可以是文本，也可以是定义更多特性的Caption对象
+            </summary>
+        </member>
+        <member name="P:GoldPrinter.MisGoldPrinter.Top">
+            <summary>
+            或取或设置网格头，可以是以'|'分隔的字符串或或一维数组或具有更多特性的Top对象
+            </summary>
+        </member>
+        <member name="P:GoldPrinter.MisGoldPrinter.Bottom">
+            <summary>
+            或取或设置网格底，可以是以'|'分隔的字符串或或一维数组或具有更多特性的Bottom对象
+            </summary>
+        </member>
+        <member name="P:GoldPrinter.MisGoldPrinter.Header">
+            <summary>
+            或取或设置网格头部说明部分，可以是一维数组、二维数组、或DataTable或Header等
+            </summary>
+        </member>
+        <member name="P:GoldPrinter.MisGoldPrinter.Footer">
+            <summary>
+            或取或设置网格下部说明部分，可以是一维数组、二维数组、或DataTable或Footer等等
+            </summary>
+        </member>
+        <member name="P:GoldPrinter.MisGoldPrinter.MultiHeader">
+            <summary>
+            获取或设置网格体对应的标题，可以是一维数组、二维数组、或DataTable或具有更多特性的MultiHeader
+            </summary>
+        </member>
+        <member name="P:GoldPrinter.MisGoldPrinter.Body">
+            <summary>
+            获取或设置网格体，可以是一维数组、二维数组、或DataTable或具有更多特性的Body
+            </summary>
+        </member>
+        <member name="P:GoldPrinter.MisGoldPrinter.DataSource">
+            <summary>
+            获取或设置数据主体网格的数据源，可以是一维数组、二维数组、或DataTable或DataGrid、MshFlexGrid、HtmlTable等二维网格，不支持的自己转换成二维数组
+            </summary>
+        </member>
+        <member name="T:GoldPrinter.TimeDef">
+            <summary>
+            TimeDef 的摘要说明。
+            </summary>
+        </member>
+    </members>
+</doc>

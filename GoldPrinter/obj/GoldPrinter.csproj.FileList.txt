@@ -1,0 +1,10 @@
+bin\Debug\Qzhi.dll
+bin\Debug\Qzhi.pdb
+obj\Debug\ResolveAssemblyReference.cache
+obj\Debug\Qzhi.dll
+obj\Debug\Qzhi.pdb
+bin\Debug\Qzhi.xml
+bin\Release\Qzhi.dll
+bin\Release\Interop.Excel.dll
+obj\Release\ResolveAssemblyReference.cache
+obj\Release\Qzhi.dll

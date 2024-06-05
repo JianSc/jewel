@@ -1,0 +1,10 @@
+bin\Release\camACP.dll
+bin\Release\camACP.pdb
+obj\Release\ResolveAssemblyReference.cache
+obj\Release\camACP.dll
+obj\Release\camACP.pdb
+bin\Debug\camACP.dll
+bin\Debug\camACP.pdb
+obj\Debug\ResolveAssemblyReference.cache
+obj\Debug\camACP.dll
+obj\Debug\camACP.pdb

@@ -1,0 +1,12 @@
+F:\Jewel\System\bin\Debug\System.exe
+F:\Jewel\System\bin\Debug\System.pdb
+F:\Jewel\System\bin\Debug\mesk.dll
+F:\Jewel\System\bin\Debug\MSG.dll
+F:\Jewel\System\bin\Debug\mesk.pdb
+F:\Jewel\System\bin\Debug\MSG.pdb
+F:\Jewel\System\obj\Debug\ResolveAssemblyReference.cache
+F:\Jewel\System\obj\Debug\Tools.Form1.resources
+F:\Jewel\System\obj\Debug\System.Properties.Resources.resources
+F:\Jewel\System\obj\Debug\Tools.csproj.GenerateResource.Cache
+F:\Jewel\System\obj\Debug\System.exe
+F:\Jewel\System\obj\Debug\System.pdb
